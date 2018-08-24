@@ -65,12 +65,12 @@
 					<dd class="{$filter['sexdata'] == '2' ? 'selected' : ''}" data-val="2"><a href="javascript:;">女</a></dd>
 				</dl>
 			</li>
-			<li class="select-list">
+			<li class="diqu">
 				<form role="diqu" action="">
-				<dl id="select4">
-					<dt>地区：</dt>
-					<dd><input type="city" style="width: 200px;" name="city" value="{$filter['city']}" id="city" data-toggle="city-picker" /></dd>
-					<dd><input class="subbtn" type="button" name="cityBtn" value="确定"></dd>
+				<dl id="select4" class="diqu_dl">
+					<dt class="diqu_dt">地区：</dt>
+					<dd class="diqu_dd" style="position: relative;"><input type="city" style="width: 200px;" name="city" value="{$filter['city']}" id="city" data-toggle="city-picker" /></dd>
+					<dd class="diqu_dd"><input class="subbtn" type="button" name="cityBtn" value="确定"></dd>
 				</dl>
 				</form>
 			</li>

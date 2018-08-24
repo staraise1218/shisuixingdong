@@ -23,7 +23,7 @@ class Ems extends Api
             $result = $obj
                     ->to($params->email)
                     ->subject('验证码')
-                    ->message("你的验证码是：" . $params->code)
+                    ->message("您的验证码是：" . $params->code)
                     ->send();
             return $result;
         });
