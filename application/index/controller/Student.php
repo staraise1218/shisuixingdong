@@ -86,7 +86,7 @@ class Student extends Frontend
         $info = Db::name('student')->alias('stu')
                 ->join('school sch', 'stu.school_id=sch.id', 'left')
                 ->where('stu.id', $id)
-                ->field('stu.id, stu.name, stu.nation, stu.sex, stu.age, stu.number, stu.family_status, stu.donation_status, stu.detailcontent, stu.createtime, sch.name school_name')
+                ->field('stu.id, stu.name, stu.nation, stu.sexdata, stu.age, stu.number, stu.family_status, stu.donation_status, stu.detailcontent, stu.createtime, sch.name school_name')
                 ->find();
 
         $this->assign('info', $info);
