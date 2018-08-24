@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-学生详情</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/details.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/contributor.css">
+	<link rel="stylesheet" type="text/css" href="css/track.css">
+
+</head>
+<body>
+	<!-- 顶部登陆 -->
+	<div class="login pa" id="top">
+		<div class="fr">
+			<a href="#" data-toggle="modal" data-target="#myModal">登陆</a><span>|</span>
+			<a href="#" data-toggle="modal" data-target="#myModal1">注册</a><span>|</span>
+			<a href="mycont.html">我的捐助</a><span>|</span>
+			<a href="#"><i class="iconfont icon-iconfontweixin"></i> 关注微信公众号</a>
+		</div>
+	</div>
+	<!-- 导航 -->
+	<nav class="pa white_bg">
+		<img class="nav_logo" src="images/logo.png">
+		<div class="nav_search">
+			<div class="nav_input">
+				<i class="iconfont icon-search"></i>
+				<input type="text" placeholder="搜索学生">
+			</div>
+			<div class="nav_icon fr ac"><span class="iconfont icon-search" style="font-size: 24px;"></span></div>
+		</div>
+		<ul class="nav_list">
+			<li><a href="index.html">首页</a></li>
+			<li class="active active_bg"><a href="allstudent.html">全部学生</a></li>
+		</ul>
+	</nav>
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="allstudent.html">全部学生</a></li>
+			<li class="active active_bread">捐款</li>
+		</ol>
+	</div>
+	<!-- 捐款 -->
+	<div class="pa">
+		<div class="white_bg details">
+			<p class="details_title ac">学生详情</p>
+			<p class="details_date ac">登记时间：2017-02-15</p>
+			<div class="details_info fl">
+				<div class="details_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+			</div>
+			<img class="fr details_img" src="images/details.png">
+			<div style="clear: both;"></div>
+			<div class="details_bottom ac">
+				<a class="details_btn ac" href="contributor.html">捐 款</a>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="footer pa ac">
+		<p>Copyright © 2016-2025 中垦优选 版权所有 保留一切权力 备案号：京ICP备17005570号-1</p>
+		<p>由北京烽火万家科技有限公司提供技术支持 </p>
+	</div>
+	<!-- 登陆 -->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="jump">
+			<div class="login_title ac">
+				用户登陆
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">手 机 号&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="text" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">验 证 码&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="text" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">密 码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="password" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">确认密码：</span>
+				<input class="personal_input contributor_input" type="password" name="">
+			</div>
+			<div class="ac">
+				<a class="details_btn ac" href="mycont.html">注册</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="jump">
+			<div class="login_title ac">
+				用户登陆
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">用户名：</span>
+				<input class="personal_input contributor_input" type="text" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">密码&nbsp;&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="password" name="">
+			</div>
+			<div class="ac">
+				<a class="details_btn ac" href="mycont.html">登陆</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

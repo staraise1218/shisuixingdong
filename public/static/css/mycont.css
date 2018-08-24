@@ -1,0 +1,84 @@
+.mycont{
+	margin-top: 20px;
+}
+
+.mycont_menu{
+	border: 1px solid #e2e2e2;
+	padding: 0 10px;
+	width: 20%;
+}
+
+.mycont_menu li{
+	border-bottom: 1px dashed #e5e5e5;
+	padding: 20px 0;
+}
+
+.mycont_menu li:last-child{
+	border: none;
+}
+
+.mycont_menu li a{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.mycont_menu li:hover a{
+	color: #c81d1c;
+}
+
+/*右边表单*/
+.mycont_list{
+	width: 76%;
+	padding: 20px 0;
+	border: 1px solid #e2e2e2;
+}
+
+.mycont_list_top{
+	border-bottom: 1px solid #e2e2e2;
+	padding: 0 20px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.mycont_list_top li{
+	float: left;
+}
+
+.mycont_list_top li a{
+	padding: 10px 0;
+	margin-left: 20px;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.mycont_list_top li a:hover{
+	border-bottom: 2px solid #c81d1c;
+	color: #c81d1c;
+}
+
+.mycont_list_act{
+	border-bottom: 2px solid #c81d1c;
+	color: #c81d1c;
+}
+
+.mycont_list_table{
+	padding: 10px 20px;
+}
+
+thead tr th{
+	text-align: center;
+	font-weight: bold;
+	background-color: #f5f5f5;
+	border: none !important;
+}
+
+tbody td{
+	border-top: none !important;
+	border-bottom: 1px solid #ddd;
+	padding: 12px 0 !important;
+}
+
+.table_btn{
+	color: #2d74d3;
+}

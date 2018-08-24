@@ -1,0 +1,33 @@
+.article{
+	margin-top: 20px;
+    border: 1px solid #e2e2e2;
+}
+
+.article_top{
+	padding: 20px;
+	overflow: hidden;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.article_search{
+    border: 1px solid #c81d1c;
+    display: inline-block;
+}
+
+.article_search input{
+	border:none;
+	outline:none;
+}
+
+.article_table{
+	padding: 20px;
+}
+
+.article_date{
+	width: 220px;
+	padding-right: 50px !important;
+}
+
+.article_right{
+	padding-left: 50px !important;
+}

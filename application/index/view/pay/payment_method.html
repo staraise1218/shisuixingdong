@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-学生详情</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/libs/layer/dist/layer.js"></script>
+	<script type="text/javascript" src="/static/js/pay.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/details.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/track.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/pay.css">
+
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="/">首页</a></li>
+			<li class="active active_bread">支付中心</li>
+		</ol>
+	</div>
+	<!-- 捐款 -->
+	<div class="pa">
+		<div class="pay_title">支付中心</div>
+		<div class="pay_body white_bg">
+			<div class="pay_body_title">
+				<div class="pay_body_word">您正在向 <span>{$info.name}</span> 捐助 <span>{$info.year}</span> 年的费用 <span>{$info.money}</span> 元</div>
+			</div>
+			<div class="pay_method">
+				<h2 class="pay_method_title">支付方式</h2>
+				<ul class="pay_item">
+					<li class="border_active current" pay-name="alipay">
+						<img class="" src="/static/images/zhi.png">
+						<div class="triangle">
+							<i class="iconfont icon-icon"></i>
+						</div>
+					</li>
+					<li pay-name="weixin">
+						<img src="/static/images/wei.png">
+						<div class="triangle">
+							<i class="iconfont icon-icon"></i>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="pay_bottom fr">
+				<div class="pay_bottom_word">应付金额 <span class="pay_bottom_red"> ￥ <em>2875.00</em></span></div>
+				<input type="hidden" name="order_sn" value="{$info.order_sn}">
+				<button class="pay_btn">确认支付</button>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

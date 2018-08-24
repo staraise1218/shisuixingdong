@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-全部学生</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/allstudent.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/contributor.css">
+	<link rel="stylesheet" type="text/css" href="css/track.css">
+
+</head>
+<body>
+	<!-- 顶部登陆 -->
+	<div class="login pa" id="top">
+		<div class="fr">
+			<a href="#" data-toggle="modal" data-target="#myModal">登陆</a><span>|</span>
+			<a href="#" data-toggle="modal" data-target="#myModal1">注册</a><span>|</span>
+			<a href="mycont.html">我的捐助</a><span>|</span>
+			<a href="#"><i class="iconfont icon-iconfontweixin"></i> 关注微信公众号</a>
+		</div>
+	</div>
+	<!-- 导航 -->
+	<nav class="pa white_bg">
+		<img class="nav_logo" src="images/logo.png">
+		<div class="nav_search">
+			<div class="nav_input">
+				<i class="iconfont icon-search"></i>
+				<input type="text" placeholder="搜索学生">
+			</div>
+			<div class="nav_icon fr ac"><span class="iconfont icon-search" style="font-size: 24px;"></span></div>
+		</div>
+		<ul class="nav_list">
+			<li><a href="index.html">首页</a></li>
+			<li class="active active_bg"><a href="allstudent.html">全部学生</a></li>
+		</ul>
+	</nav>
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="index.html">首页</a></li>
+			<li class="active active_bread">全部学生</li>
+		</ol>
+	</div>
+	<!-- 条件筛选 -->
+	<div class="pa white_bg">
+		<ul class="select">
+			<li class="select-list">
+				<dl id="select1">
+					<dt>资助情况：</dt>
+					<dd class="select-all selected"><a href="#">全部</a></dd>
+					<dd><a href="#">待资助</a></dd>
+					<dd><a href="#">资助中</a></dd>
+				</dl>
+			</li>
+			<li class="select-list">
+				<dl id="select2">
+					<dt>年龄：</dt>
+					<dd class="select-all selected"><a href="#">3-6岁</a></dd>
+					<dd><a href="#">7-14岁</a></dd>
+					<dd><a href="#">15-20岁</a></dd>
+					<dd><input type="text" name=""> 岁&nbsp;&nbsp;</dd>
+					<dd class="none">至</dd>
+					<dd><input type="text" name=""> 岁&nbsp;&nbsp;</dd>
+					<dd><input class="subbtn" type="submit" name="" value="确定"></dd>
+				</dl>
+			</li>
+			<li class="select-list">
+				<dl id="select3">
+					<dt>性别：</dt>
+					<dd class="select-all selected"><a href="#">男</a></dd>
+					<dd><a href="#">女</a></dd>
+				</dl>
+			</li>
+			<li class="select-list">
+				<dl id="select4">
+					<dt>地区：</dt>
+					<dd>
+						<select>
+							<option>省</option>
+						</select>
+					</dd>
+					<dd>
+						<select>
+							<option>地级市</option>
+						</select>
+					</dd>
+					<dd>
+						<select>
+							<option>省级市/县</option>
+						</select>
+					</dd>
+					<dd><input class="subbtn" type="submit" name="" value="确定"></dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<div class="pa">
+		<div class="white_bg">
+			<ul class="condition_list">
+				<li>
+					<select class="condition_active">
+						<option>按更新时间</option>
+					</select>
+				</li>
+				<li>
+					<select>
+						<option>按年龄</option>
+					</select>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 学生列表 -->
+	<div class="pa">
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name">织周</div>
+				<p>汉族 / 19岁 / 男</p>
+				<p>编号： <span>ZQWX92834s</span></p>
+				<p>学校： <span>巫溪中学</span></p>
+				<p>家庭： <span>父亲去世，母亲离家</span></p>
+				<a class="student_donation fr" href="details.html">捐助</a>
+			</div>
+			<div class="item_mr"></div>
+		</div>
+	</div>
+	<div class="pa ac">
+		<ul class="pagination">
+			<li>
+				<a href="#" aria-label="Previous">
+					<span aria-hidden="true">上一页</span>
+				</a>
+			</li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li>
+				<a href="#" aria-label="Next">
+					<span aria-hidden="true">下一页</span>
+				</a>
+			</li>
+			<li class="disabled"><a href="#">共 <span>5</span>页</a></li>
+		</ul>
+	</div>
+	<!-- 底部 -->
+	<div class="footer pa ac">
+		<p>Copyright © 2016-2025 中垦优选 版权所有 保留一切权力 备案号：京ICP备17005570号-1</p>
+		<p>由北京烽火万家科技有限公司提供技术支持 </p>
+	</div>
+
+	<!-- 登陆 -->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="jump">
+			<div class="login_title ac">
+				用户登陆
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">手 机 号&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="text" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">验 证 码&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="text" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">密 码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="password" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">确认密码：</span>
+				<input class="personal_input contributor_input" type="password" name="">
+			</div>
+			<div class="ac">
+				<a class="details_btn ac" href="mycont.html">注册</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="jump">
+			<div class="login_title ac">
+				用户登陆
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">用户名：</span>
+				<input class="personal_input contributor_input" type="text" name="">
+			</div>
+			<div class="contributor_item">
+				<span class="contributor_name">密码&nbsp;&nbsp;&nbsp;：</span>
+				<input class="personal_input contributor_input" type="password" name="">
+			</div>
+			<div class="ac">
+				<a class="details_btn ac" href="mycont.html">登陆</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

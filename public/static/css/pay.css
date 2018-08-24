@@ -1,0 +1,104 @@
+.pay_title{
+	font-size: 32px;
+    line-height: 115px;
+    margin-right: 25px;
+    font-weight: 200;
+}
+
+.pay_body{
+    padding: 0 36px 32px;
+    box-shadow: 0 8px 16px 0 rgba(7,17,27,.1);
+    box-sizing: border-box;
+}
+
+.pay_body_title{
+	min-height: 88px;
+    line-height: 88px;
+    box-sizing: border-box;
+}
+
+.pay_body_word{
+	line-height: 16px;
+    padding-top: 36px;
+    padding-bottom: 24px;
+    font-size: 16px;
+}
+
+.pay_method{
+	padding: 30px 12px 48px;
+    border-top: 1px solid #d9dde1;
+    border-bottom: 1px solid #d9dde1;
+}
+
+.pay_method_title{
+	height: 46px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pay_item{
+	overflow: hidden;
+}
+
+.pay_item li{
+    float: left;
+    margin-right: 25px;
+    position: relative;
+    cursor: pointer;
+	border: 2px solid #fff;
+}
+
+.pay_item li:hover, .pay_item li.current{
+	border-color: red;
+}
+
+.pay_item li:hover .triangle, .pay_item li.current .triangle{
+	display: block;
+}
+
+
+.triangle{
+	display: none;
+	position: absolute;
+    right: 0;
+    bottom: 0;
+	width: 0;
+    height: 0;
+    border-bottom: 20px solid red;
+    border-left: 20px solid transparent;
+}
+
+.triangle i{
+	position: absolute;
+    right: 0;
+    bottom: -20px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.pay_bottom{
+	padding-top: 30px;
+}
+
+.pay_bottom_word{
+	font-size: 16px; 
+}
+
+.pay_bottom_red{
+	font-size: 24px;
+	color: red;
+	margin-left: 10px;
+}
+
+.pay_btn{
+	margin-top: 30px;
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #f01414;
+    border: none;
+    outline: none;
+}

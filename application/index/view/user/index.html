@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>拾穗行动-我的捐赠</title>
+    <meta charset="UTF-8">
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/allstudent.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/mycont.css">
+
+</head>
+<body>
+    {include file="common/top" /}
+    <!-- 面包屑导航 -->
+    <div class="pa white_bg">
+        <ol class="breadcrumb white_bg">
+            <li><a href="/">首页</a></li>
+            <li class="active active_bread">我的捐赠</li>
+        </ol>
+    </div>
+    <!-- 捐款 -->
+    <div class="pa mycont">
+        {include file="user/leftmenu" /}
+        <div class="mycont_list white_bg fr">
+            <ul class="mycont_list_top">
+                <li><a class="mycont_list_act" href="#">全部捐款</a></li>
+            </ul>
+            <div class="mycont_list_table">
+                <table class="table ac">
+                    <thead>
+                        <tr>
+                            <th>学生</th>
+                            <th>资助时间</th>
+                            <th>捐赠款</th>
+                            <th>交易状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach name="list" item="item"}
+                        <tr>
+                            <td>{$item.name}</td>
+                            <td>{$item.paystatus ==1 ? date('Y-m-d', $item.paytime).'-'.date('Y-m-d', $item.expirytime) : ''}</td>
+                            <td>￥{$item.money}</td>
+                            <td>
+                                {if condition="$item.paystatus==0"}
+                                <a style="color: red" href="{:url('index/pay/paymentMethod', array('order_sn'=>$item.order_sn))}">未支付</a>
+                                {else/}
+                                已支付
+                                {/if}
+                            </td>
+                            <td>
+                                {if condition="$item.paystatus==1"}
+                                <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id']))}">善款追踪与学生近况</a>
+                                {/if}
+                            </td>
+                        </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+                <div class="pa ac">
+                    {$list->render()}
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file="common/footer" /}
+</body>
+</html>

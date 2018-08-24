@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>拾穗行动-首页</title>
+    <meta charset="UTF-8">
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/track.css">
+
+</head>
+<body>
+    {include file="common/top" /}
+    <!-- 轮播图 -->
+    <div id="myCarousel" class="carousel slide pa">
+        <!-- 轮播点 -->
+        <ol class="carousel-indicators">
+            {for start="0" end="$adcount"}
+            <li data-target="#myCarousel" data-slide-to="{$i}" {$i == 0 ? 'class="active"' : ''}></li>
+            {/for}
+        </ol>   
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+            {foreach name="adlist" item="ad" key="k"}
+            <div class="item {$k == 0 ? 'active' : ''}">
+                <a href="{$ad.link ? $ad.link : 'javascript:;'}"><img class="carousel_img" src="{$ad.image}" alt="{$ad.title}"></a>
+            </div>
+            {/foreach}
+        </div>
+    </div>
+    <!-- 消息 -->
+    <div class="pa">
+        <div class="news">
+            <div class="fl">
+                <span class="iconfont icon-huaban" style="font-size: 22px"></span> 全部文件
+            </div>
+            <div class="news_r fr">
+                <a href="{:url('article/index')}">查看全部 <span class="iconfont icon-you-yuan" style="font-size: 22px"></span></a>
+            </div>
+        </div>
+        <ul class="news_list">
+            {foreach name="articleList" item="article"}
+            <li>
+                <i class="login_act iconfont icon-dian1"></i>
+                <span class="news_list_title"><a href="{:url('article/detail', array('id'=>$article.id))}">{$article.title}</a></span>
+                <div class="news_list_date fr">{$article.createtime|date="Y-m-d H:i", ###}</div>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <!-- 项目统计 -->
+    <br/><br/>
+    <div class="pa">
+        <div class="ac">
+            <div class="pub_title">CENSUS</div>
+            <img src="/static/images/line.png">
+            <div class="pub_stitle">项目统计</div>
+        </div>
+        <div class="pro">
+            <div class="pro_item ac col-lg-4">
+                <img class="pro_item_img" src="/static/images/icon.png"> 募捐中项目 <span>2345</span> 个
+            </div>
+            <div class="pro_item ac col-lg-4">
+                <img class="pro_item_img" src="/static/images/icon.png"> 执行中项目 <span>2345</span> 个
+            </div>
+            <div class="pro_item ac col-lg-4">
+                <img class="pro_item_img" src="/static/images/icon.png"> 已结束项目 <span>2345</span> 个
+            </div>
+        </div>
+    </div>
+    {include file="common/footer" /}
+</body>
+</html>

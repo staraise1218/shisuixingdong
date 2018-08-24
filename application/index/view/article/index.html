@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-全部文章</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/article.css">
+
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="/">首页</a></li>
+			<li class="active active_bread">全部文章</li>
+		</ol>
+	</div>
+	
+	<!-- 全部文章 -->
+	<div class="pa">
+		<div class="article white_bg">
+			<div class="article_top">
+				<div class="article_search fr">
+					<div class="nav_input">
+						<i class="iconfont icon-search"></i>
+						<input type="text" placeholder="输入搜索关键词">
+					</div>
+					<div class="nav_icon fr ac"><span class="iconfont icon-search" style="font-size: 24px;"></span></div>
+				</div>
+			</div>
+
+			<div class="article_table">
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width: 200px;">标题</th>
+							<th>发表时间</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="article"}
+						<tr>
+							<td class="article_right">
+								<a href="{:url('article/detail', array('id'=>$article.id))}">{$article.title}</a>
+							</td>
+							<td class="article_date ar">{$article.createtime|date="Y-m-d H:i", ###}</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+				<div class="pa ac">
+					{$list->render()}
+				</div>
+			</div>
+		</div>
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-全部学生</title>
+	<meta charset="UTF-8">
+
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="__CDN__/assets/css/frontend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet">
+	<script type="text/javascript">
+        var require = {
+            config: {$config|json_encode}
+        };
+    </script>
+	<script src="__CDN__/assets/js/require{$Think.config.app_debug?'':'.min'}.js" data-main="__CDN__/assets/js/require-frontend{$Think.config.app_debug?'':'.min'}.js?v={$site.version}"></script>
+	<!-- <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<!-- <script type="text/javascript" src="/assets/libs/layer/dist/layer.js"></script> -->
+	<script type="text/javascript" src="/static/js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/allstudent.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/track.css">
+
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="/">首页</a></li>
+			<li class="active active_bread">全部学生</li>
+		</ol>
+	</div>
+	<!-- 条件筛选 -->
+	<div class="pa white_bg" style="overflow:visible;">
+		<ul class="select">
+			<li class="select-list">
+				<dl id="select1">
+					<dt>资助情况：</dt>
+					<dd class="select-all {$filter['donation_status'] ? '' : 'selected'}" data-val=""><a href="javascript:;">全部</a></dd>
+					<dd class='{if condition="$filter.donation_status eq 1"}selected{/if}' data-val="1"><a href="javascript:;">待资助</a></dd>
+					<dd class='{if condition="$filter.donation_status eq 2"}selected{/if}' data-val="2"><a href="javascript:;">资助中</a></dd>
+				</dl>
+			</li>
+			<li class="select-list">
+				<dl id="select2">
+					<dt>年龄：</dt>
+					<dd class="dosubmit select-all {$filter['age'] ? '' : 'selected'}" data-val=""><a href="javascript:;">不限</a></dd>
+					<dd class="dosubmit {$filter['age']=='3-6' ? 'selected' : ''}" data-val="3-6"><a href="javascript:;">3-6岁</a></dd>
+					<dd class="dosubmit {$filter['age']=='7-14' ? 'selected' : ''}" data-val="7-14"><a href="javascript:;">7-14岁</a></dd>
+					<dd class="dosubmit {$filter['age']=='15-20' ? 'selected' : ''}" data-val="15-20"><a href="javascript:;">15-20岁</a></dd>
+					<dd><input type="text" name="age_l" value="{$filter['age_l']}"> 岁&nbsp;&nbsp;</dd>
+					<dd class="none">至</dd>
+					<dd><input type="text" name="age_r" value="{$filter['age_r']}"> 岁&nbsp;&nbsp;</dd>
+					<dd><input class="subbtn" type="submit" name="ageBtn" value="确定"></dd>
+				</dl>
+			</li>
+			<li class="select-list">
+				<dl id="select3">
+					<dt>性别：</dt>
+					<dd class="select-all {$filter['sexdata'] ? '' : 'selected'}" data-val=""><a href="javascript:;">不限</a></dd>
+					<dd class="{$filter['sexdata'] == '1' ? 'selected' : ''}" data-val="1"><a href="javascript:;">男</a></dd>
+					<dd class="{$filter['sexdata'] == '2' ? 'selected' : ''}" data-val="2"><a href="javascript:;">女</a></dd>
+				</dl>
+			</li>
+			<li class="select-list">
+				<form role="diqu" action="">
+				<dl id="select4">
+					<dt>地区：</dt>
+					<dd><input type="city" style="width: 200px;" name="city" value="{$filter['city']}" id="city" data-toggle="city-picker" /></dd>
+					<dd><input class="subbtn" type="button" name="cityBtn" value="确定"></dd>
+				</dl>
+				</form>
+			</li>
+		</ul>
+		<form action="{:url('student/index')}" method="get" id="filter" style="display: none;">
+			<input type="hidden" name="donation_status" value="{$filter['donation_status']}">
+			<input type="hidden" name="age" value="{$filter['age']}">
+			<input type="hidden" name="sexdata" value="{$filter['sexdata']}">
+			<input type="hidden" name="city" value="{$filter['city']}">
+			<input type="hidden" class="orderInput" name="orderByUpdatetime" value="{$filter['orderByUpdatetime']}">
+			<input type="hidden" class="orderInput" name="orderByAge" value="{$filter['orderByAge']}">
+		</form>
+	</div>
+	<div class="pa">
+		<div class="white_bg">
+			<ul class="condition_list">
+				<li class="{$filter.orderByUpdatetime ? 'condition_active' : ''}" order-name="orderByUpdatetime">按更新时间 <span class="iconfont icon-shangxia"></span></li>
+				<li class="{$filter.orderByAge ? 'condition_active' : ''}" order-name="orderByAge">按年龄 <span class="iconfont icon-shangxia"></span></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 学生列表 -->
+	<div class="pa">
+		{foreach $list as $item}
+		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<div class="student_item">
+				<div class="student_name"><a href="{:url('student/detail', array('id'=>$item.id))}">{$item.name}</a></div>
+				<p>{$item.nation} / {$item.age}岁 / {$item.sexdata == '1' ? '男' : '女'}</p>
+				<p>编号： <span>{$item.number}</span></p>
+				<p>学校： <span>{$item.school_name}</span></p>
+				<div class="student_family">家庭： <span>{$item.family_status}</span></div>
+				{if condition="$item.donation_status eq 1"}
+				<a class="student_donation" href="{:url('student/donation', array('student_id'=>$item.id))}">捐助</a>
+				{/if}
+			</div>
+			<div class="item_mr"></div>
+		</div>
+		{/foreach}
+	</div>
+	<div class="pa ac">
+		{$list->render()}
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

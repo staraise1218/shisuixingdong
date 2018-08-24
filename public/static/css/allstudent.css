@@ -1,0 +1,175 @@
+/*条件筛选*/
+.select{
+	padding-bottom: 20px;
+}
+
+.select li {
+	list-style: none;
+	padding: 10px 0 5px 0;
+}
+
+.select dl {
+	zoom: 1;
+	position: relative;
+	line-height: 24px;
+}
+
+.select dl:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden
+}
+
+.select dt {
+	width: 80px;
+	margin-bottom: 5px;
+	display: inline-block;
+	float: left;
+	color: #000;
+	height: 24px;
+	line-height: 24px
+}
+
+.select dd {
+	text-align: center;
+	border-radius: 4px;
+	border:1px solid #dcdcdc;
+	float: left;
+	display: inline;
+	margin: 0 0 5px 10px;
+}
+
+.select .none {
+	width: 20px !important;
+	border: none;
+}
+
+.select a,.select input,select{
+	padding: 0 5px;
+	width: 80px;
+	display: inline-block;
+	white-space: nowrap;
+	height: 24px;
+	text-decoration: none;
+	color: #000;
+	border: none;
+	outline:none;
+	background-color: #fff;
+}
+
+.subbtn{
+	width: auto;
+	padding: 0 10px;
+}
+
+.select a:hover {
+	color: #c81d1c;
+	border:1px solid #c81d1c;
+	border-radius: 4px;
+}
+
+.select .selected a {
+	color: #c81d1c;
+	border:1px solid #c81d1c;
+	border-radius: 4px;
+}
+
+.select-result dt {
+	font-weight: bold
+}
+
+.condition_list{
+	overflow: hidden;
+	margin: 20px 0;
+}
+
+.condition_list li{
+	display: inline-block;
+	font-size: 18px;
+	width: 130px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border:1px solid #dcdcdc;
+	margin-right: -5px;
+	cursor:pointer;
+}
+
+.condition_list li span{
+	font-size: 10px;
+}
+
+.condition_active{
+	background-color: #c81d1c;
+	color: #fff;
+	border:none;
+}
+
+.condition_list li:hover{
+	background-color: #c81d1c;
+	color: #fff;
+}
+
+/*学生列表*/
+.student_item{
+	margin: 0 0 20px 0;
+	padding: 10px;
+	border:1px solid #dcdcdc;
+	background-color: #fff;
+	height: 210px;
+	position: relative;
+}
+
+.student_name{
+	font-size: 20px;
+	color: #000;
+	font-weight: bold;
+	border-bottom: 1px solid #f6d5d3;
+	margin-bottom: 10px;
+	padding-bottom: 6px;
+}
+
+.student_item p{
+	color: #666;
+	margin-top: 5px;
+}
+
+.student_family{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.student_donation{
+	display: inline-block;
+	background-color: #c81d1c;
+	color: #fff;
+	padding: 4px 10px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.student_donation:hover{
+	color: #fff;
+}
+
+.item_mr{
+	margin-right: 20px;
+}
+
+.pagination li a{
+	margin-right: 10px;
+	color: #666;
+	border-color: #cacaca;
+	border-radius: 0 !important; 
+}
+
+.pagination li a:hover{
+	background-color: #c81d1c;
+	color: #fff;
+}
