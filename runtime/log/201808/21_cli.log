@@ -1,0 +1,44 @@
+[ 2018-08-21T15:51:13+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-08-21T15:51:13+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-08-21T15:51:13+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022002s ]
+[ 2018-08-21T15:51:13+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-08-21T15:51:13+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.142008s ] mysql:host=127.0.0.1;dbname=shihuixingdong;charset=utf8
+[ 2018-08-21T15:51:13+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'student' [ RunTime:0.155009s ]
+[ 2018-08-21T15:51:13+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'fa_student' [ RunTime:0.113006s ]
+[ 2018-08-21T15:51:22+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-08-21T15:51:22+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-08-21T15:51:22+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.011000s ]
+[ 2018-08-21T15:51:22+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-08-21T15:51:22+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.070004s ] mysql:host=127.0.0.1;dbname=shihuixingdong;charset=utf8
+[ 2018-08-21T15:51:22+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'student' [ RunTime:0.046002s ]
+[ 2018-08-21T15:51:22+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'fa_student' [ RunTime:0.050002s ]
+[ 2018-08-21T15:51:22+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'shihuixingdong' AND table_name = 'fa_student' ORDER BY ORDINAL_POSITION [ RunTime:0.198011s ]
+[ 2018-08-21T15:54:45+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-08-21T15:54:45+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-08-21T15:54:45+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.010001s ]
+[ 2018-08-21T15:54:45+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-08-21T15:54:45+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.044003s ] mysql:host=127.0.0.1;dbname=shihuixingdong;charset=utf8
+[ 2018-08-21T15:54:45+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'student' [ RunTime:0.053003s ]
+[ 2018-08-21T15:54:46+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'fa_student' [ RunTime:0.388022s ]
+[ 2018-08-21T15:54:46+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'shihuixingdong' AND table_name = 'fa_student' ORDER BY ORDINAL_POSITION [ RunTime:0.109007s ]
+[ 2018-08-21T15:57:24+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-08-21T15:57:24+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-08-21T15:57:24+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.012001s ]
+[ 2018-08-21T15:57:24+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-08-21T15:57:24+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;dbname=shihuixingdong;charset=utf8
+[ 2018-08-21T15:57:24+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'student' [ RunTime:0.022001s ]
+[ 2018-08-21T15:57:24+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'fa_student' [ RunTime:0.002000s ]
+[ 2018-08-21T15:57:24+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'shihuixingdong' AND table_name = 'fa_student' ORDER BY ORDINAL_POSITION [ RunTime:0.003000s ]
+[ 2018-08-21T18:41:19+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ 2018-08-21T18:41:19+08:00 ][ info ] [ CACHE ] INIT File
+[ 2018-08-21T18:41:19+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.010001s ]
+[ 2018-08-21T18:41:19+08:00 ][ info ] [ DB ] INIT mysql
+[ 2018-08-21T18:41:19+08:00 ][ sql ] [ DB ] CONNECT:[ UseTime:0.038002s ] mysql:host=127.0.0.1;dbname=shihuixingdong;charset=utf8
+[ 2018-08-21T18:41:19+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'donation' [ RunTime:0.029002s ]
+[ 2018-08-21T18:41:19+08:00 ][ sql ] [ SQL ] SHOW TABLE STATUS LIKE 'fa_donation' [ RunTime:0.050003s ]
+[ 2018-08-21T18:41:19+08:00 ][ sql ] [ SQL ] SELECT * FROM `information_schema`.`columns` WHERE TABLE_SCHEMA = 'shihuixingdong' AND table_name = 'fa_donation' ORDER BY ORDINAL_POSITION [ RunTime:0.004001s ]

@@ -1,0 +1,51 @@
+---------------------------------------------------------------
+[ 2018-08-16T07:53:57+08:00 ] 127.0.0.1 POST /index/user/personal.html
+[ info ] shihuixingdong.localhost.com/index/user/personal.html [运行时间：1.617093s][吞吐率：0.62req/s] [内存消耗：5,513.99kb] [文件加载：81]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.009001s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.055003s ]
+[ info ] [ LANG ] E:\PHPTools\www\shihuixingdong\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'personal',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'shihuixingdong.localhost.com',
+  'connection' => 'keep-alive',
+  'content-length' => '131',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://shihuixingdong.localhost.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://shihuixingdong.localhost.com/index/user/personal.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1533472825; PHPSESSID=h4gknao50ad2puubv1rt8l1p83; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1533720091; yindao=1; UM_distinctid=1652d6494214-055041ad19c93b-3c3c5905-100200-1652d64942221; TZhhQ_account_type=2223R5qnowPpVvhKO6qU-F3RKOc1WyWSTktmFeFceabrkQ; TZhhQ_forget_account=31d5cn22BRBxHevNFyQ48zIKrER-1dw1cbT5_4tv5sSpc5837mx-; TZhhQ_auth=a546p4XzZ_R2hqcRCaS7CQqLE38H2oH7-jv1qPCcCusity_8rvYVmNYqQ5dvdvI2JfZhIIg5FGnRP3CydEuxb0V20jG5d777nfWUyVoazxwcMK72ZRYT1mzNgSCVjUSHBqsg407zkm0pVsv_zQ6eTME; TZhhQ__userid=1f39idsw8ylx9wAKiFFNQcJSfjpiITFce8EBVBJK; TZhhQ__username=3386VIan55JG_mspodVS0HzovogEVhgDBiFB08f1TMxUARs9c12-cQ; TZhhQ__nickname=3386SDCtYb9CHbOJQIlbSM0Lq3cNySd30FgiiVi4gu_EB73Jy0zyIQ; uid=2; token=9d877b4d-12d2-4e4d-948f-63452092a95e',
+)
+[ info ] [ PARAM ] array (
+  '__token__' => '6e69343b0e711864283026c463aa3584',
+  'nickname' => 'she',
+  'gender' => 'on',
+  'mobile' => '15201110059',
+  'birthday' => '',
+  'email' => '363912809@qq.com',
+  'profession' => '',
+)
+[ info ] [ LANG ] E:\PHPTools\www\shihuixingdong\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.031002s ]
+[ info ] [ TOKEN ] INIT Mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\PHPTools\www\shihuixingdong\public/../application/index/lang/zh-cn/user.php
+[ info ] [ RUN ] app\index\controller\User->personal[ E:\PHPTools\www\shihuixingdong\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.405024s ] mysql:host=127.0.0.1;dbname=shihuixingdong;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user_token` [ RunTime:0.137007s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user_token` WHERE  `token` = '95b36af57a17e67ed0642008fd1f96fb84beeef6' LIMIT 1 [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `fa_user` [ RunTime:0.003001s ]
+[ sql ] [ SQL ] SELECT * FROM `fa_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.002000s ]
