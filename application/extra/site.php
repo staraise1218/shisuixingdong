@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => 'FastAdmin',
+  'name' => '拾穗行动',
   'beian' => '京ICP备17005570号-1',
   'cdnurl' => '',
   'version' => '1.0.1',

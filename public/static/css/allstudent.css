@@ -40,6 +40,7 @@
 	display: inline;
 	margin: 0 0 5px 10px;
 }
+.diqu_dd {text-align: left;}
 
 .select .none {
 	width: 20px !important;
@@ -64,7 +65,7 @@
 	padding: 0 10px;
 }
 
-.select a:hover {
+.select .select-list a:hover {
 	color: #c81d1c;
 	border:1px solid #c81d1c;
 	border-radius: 4px;
