@@ -96,8 +96,9 @@
 	<div class="pa">
 		{foreach $list as $item}
 		<div class=" col-lg-3 col-md-4 col-sm-6">
+			<a href="{:url('student/detail', array('id'=>$item.id))}">
 			<div class="student_item">
-				<div class="student_name"><a href="{:url('student/detail', array('id'=>$item.id))}">{$item.name}</a></div>
+				<div class="student_name">{$item.name}</div>
 				<p>{$item.nation} / {$item.age}岁 / {$item.sexdata == '1' ? '男' : '女'}</p>
 				<p>编号： <span>{$item.number}</span></p>
 				<p>学校： <span>{$item.school_name}</span></p>
@@ -106,6 +107,7 @@
 				<a class="student_donation" href="{:url('student/donation', array('student_id'=>$item.id))}">捐助</a>
 				{/if}
 			</div>
+			</a>
 			<div class="item_mr"></div>
 		</div>
 		{/foreach}

@@ -18,6 +18,8 @@ class Article extends Backend
      */
     protected $model = null;
     protected $relationSearch = true;
+    // 快速搜索时执行查找的字段
+    protected $searchFields = 'title';
 
     public function _initialize()
     {

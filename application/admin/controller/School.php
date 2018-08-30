@@ -17,6 +17,8 @@ class School extends Backend
      * @var \app\admin\model\School
      */
     protected $model = null;
+    // 快速搜索时执行查找的字段
+    protected $searchFields = 'name';
 
     public function _initialize()
     {

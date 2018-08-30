@@ -58,6 +58,7 @@ return array (
     array (
       'register' => 'SMS_143290099',
       'changemobile' => 'SMS_142952820',
+      'resetpwd' => 'SMS_143290098',
     ),
     'rule' => 'required',
     'msg' => '',

@@ -32,17 +32,24 @@
 			<p class="details_title ac">{$info.name}</p>
 			<p class="details_date ac">登记时间：{$info.createtime|date="Y-m-d", ###}</p>
 			<div class="details_info">
-				<div class="details_infoma ac">
+				<div class="details_infoma">
 					<p>{$info.nation} / {$info.age}岁 / {$info.sexdata == '1' ? '男' : '女'}</p>
 					<p>编号： <span>{$info.number}</span></p>
 					<p>学校： <span>{$info.school_name}</span></p>
 				</div>
-				<div class="ac">家庭： <span>{$info.family_status}</span></div>
+				<div>家庭： <span>{$info.family_status}</span></div>
+				{if condition="$info.donation_status eq 2"}
+				<div class="details_infoma details_bottom" style="padding-top: 20px;">
+					<p>捐助者： <span>{$donation.fullname}</span></p>
+					<p>捐助年限： <span>{$donation.paytime|date="Y-m-d", ###} - {$donation.expirytime|date="Y-m-d", ###}</span></p>
+				</div>
+				{/if}
+				{if condition="$info.donation_status eq 1"}
 				<div class="details_bottom ac">
 					<a class="details_btn ac" href="{:url('student/donation')}">捐 款</a>
 				</div>
-
-				<div c</lass="details_content">
+				{/if}
+				<div c</lass="details_content" style="padding-top: 30px;">
 					{$info.detailcontent}
 				</div>
 			</div>

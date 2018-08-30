@@ -88,6 +88,16 @@ class Student extends Frontend
                 ->where('stu.id', $id)
                 ->field('stu.id, stu.name, stu.nation, stu.sexdata, stu.age, stu.number, stu.family_status, stu.donation_status, stu.detailcontent, stu.createtime, sch.name school_name')
                 ->find();
+        // 查找已结对的学生的结对对象
+        if($info['donation_status'] == 2){
+            $donation = Db::name('donation')
+                    ->where(array('id'=>$id, 'paystatus'=>'1'))
+                    ->order('id desc')
+                    ->field('fullname, paytime, expirytime')
+                    ->find();
+
+            $this->assign('donation', $donation);
+        }
 
         $this->assign('info', $info);
         return $this->fetch();
