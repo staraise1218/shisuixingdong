@@ -21,6 +21,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
                 sortName: 'id',
+                search: false,
                 columns: [
                     [
                         {checkbox: true},
@@ -37,11 +38,11 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'fullname', title: __('Fullname')},
                         {field: 'sex', title: __('Sex'), visible:false, searchList: {"1":__('Sex 1'),"2":__('Sex 2')}},
                         {field: 'sex_text', title: __('Sex'), operate:false},
-                        {field: 'email', title: __('Email')},
-                        {field: 'birthday', title: __('Birthday'), operate:'RANGE', addclass:'datetimerange'},
-                        {field: 'profession', title: __('Profession')},
-                        {field: 'address', title: __('Address')},
-                        {field: 'address_detail', title: __('Address_detail')},
+                        {field: 'email', title: __('Email'), visible: false, operate:false},
+                        {field: 'birthday', title: __('Birthday'), visible: false, operate:'RANGE', addclass:'datetimerange'},
+                        {field: 'profession', title: __('Profession'), visible: false, operate:false},
+                        {field: 'address', title: __('Address'), visible: false, operate:false},
+                        {field: 'address_detail', title: __('Address_detail'), visible: false, operate:false},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
