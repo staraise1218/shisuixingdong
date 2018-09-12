@@ -54,7 +54,10 @@ class Pay extends Frontend
 
         if($paymentMethod == 'weixin'){
             $Wxpay = new Wxpay();
-            $Wxpay->pagepay($order_sn, $subject, $total_amount);
+            $code_url = $Wxpay->pagepay($order_sn, $subject, $total_amount);
+
+            $this->assign('code_url', $code_url);
+            return $this->fetch('pay/wxpay_pagepay');
         }
     }
 

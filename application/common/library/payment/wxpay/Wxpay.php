@@ -28,10 +28,8 @@ class Wxpay {
 		$input->SetProduct_id("123456789");
 
 		$result = $this->GetPayUrl($input);
-		$url = $result["code_url"];
-
-		$this->assign('url', $url);
-		return $this->fetch('pay/wxpay_pagepay');
+		return $result["code_url"];
+		
 	}
 
 	/**
