@@ -5,6 +5,7 @@ namespace app\index\controller;
 use app\common\controller\Frontend;
 use think\Db;
 use app\common\library\payment\Alipay;
+use app\common\library\payment\wxpay\Wxpay;
 
 class Pay extends Frontend
 {
@@ -23,8 +24,11 @@ class Pay extends Frontend
         $info = Db::name('donation')->alias('don')
         				->join('student stu', 'don.student_id=stu.id', 'left')
         				->where('don.order_sn', $order_sn)
-        				->field('stu.name, don.year, don.money, don.order_sn')
+        				->field('stu.name, don.year, don.paystatus, don.money, don.order_sn')
         				->find();
+
+        if(empty($info)) $this->error('该订单不存在', url('user/index'));
+        if($info['paystatus'] == 1) $this->error('该订单已支付', url('user/index'));
 
         $this->assign('info', $info);
         return $this->fetch();
@@ -47,6 +51,11 @@ class Pay extends Frontend
     		$Alipay = new Alipay();
     		$Alipay->pagepay($order_sn, $subject, $total_amount);
     	}
+
+        if($paymentMethod == 'weixin'){
+            $Wxpay = new Wxpay();
+            $Wxpay->pagepay($order_sn, $subject, $total_amount);
+        }
     }
 
     public function alipay(){
