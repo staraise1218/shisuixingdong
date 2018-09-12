@@ -29,6 +29,7 @@ class Wxpay {
 
 		$result = $this->GetPayUrl($input);
 		$url2 = $result["code_url"];
+		echo $url2;
 	}
 
 	/**
