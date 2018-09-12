@@ -6,6 +6,7 @@ use app\common\controller\Frontend;
 use think\Db;
 use app\common\library\payment\Alipay;
 use app\common\library\payment\wxpay\Wxpay;
+use app\common\library\phpqrcode;
 
 class Pay extends Frontend
 {
@@ -57,7 +58,16 @@ class Pay extends Frontend
             $code_url = $Wxpay->pagepay($order_sn, $subject, $total_amount);
 
             $this->assign('code_url', $code_url);
-            return $this->fetch('pay/wxpay_pagepay');
+            return $this->fetch('wxpay_pagepay');
+        }
+    }
+
+    public function qrcode(){
+        $url = urldecode(input('param.url'));
+
+
+        if(substr($url, 0, 6) == "weixin"){
+            phpqrcode::png($url);
         }
     }
 
@@ -72,4 +82,7 @@ class Pay extends Frontend
     public function notifyUrl(){
     	echo 'notifyUrl';
     }
+
+
+
 }
