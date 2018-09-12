@@ -6,7 +6,8 @@ use app\common\controller\Frontend;
 use think\Db;
 use app\common\library\payment\Alipay;
 use app\common\library\payment\wxpay\Wxpay;
-use app\common\library\Phpqrcode;
+
+require_once ( EXTEND_PATH . 'phpqrcode/phpqrcode.php');
 
 class Pay extends Frontend
 {
@@ -67,7 +68,7 @@ class Pay extends Frontend
 
 
         if(substr($url, 0, 6) == "weixin"){
-            phpqrcode::png($url);
+            QRcode::png($url);
         }
     }
 
