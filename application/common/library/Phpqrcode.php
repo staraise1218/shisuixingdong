@@ -213,7 +213,7 @@ namespace app\common\library;
         //----------------------------------------------------------------------
         public static function buildCache()
         {
-			QRtools::markTime('before_build_cache');
+			Phpqrcode::markTime('before_build_cache');
 			
 			$mask = new QRmask();
             for ($a=1; $a <= QRSPEC_VERSION_MAX; $a++) {
@@ -229,7 +229,7 @@ namespace app\common\library;
 					$mask->makeMaskNo($maskNo, $width, $frame, $bitMask, true);
             }
 			
-			QRtools::markTime('after_build_cache');
+			Phpqrcode::markTime('after_build_cache');
         }
 
         //----------------------------------------------------------------------
@@ -303,7 +303,7 @@ namespace app\common\library;
     
     //##########################################################################
     
-    QRtools::markTime('start');
+    Phpqrcode::markTime('start');
     
 
 
@@ -2981,7 +2981,7 @@ namespace app\common\library;
 
             $raw = new QRrawcode($input);
             
-            QRtools::markTime('after_raw');
+            Phpqrcode::markTime('after_raw');
             
             $version = $raw->version;
             $width = QRspec::getWidth($version);
@@ -3003,7 +3003,7 @@ namespace app\common\library;
                 }
             }
             
-            QRtools::markTime('after_filler');
+            Phpqrcode::markTime('after_filler');
             
             unset($raw);
             
@@ -3035,7 +3035,7 @@ namespace app\common\library;
                 return NULL;
             }
             
-            QRtools::markTime('after_mask');
+            Phpqrcode::markTime('after_mask');
             
             $this->version = $version;
             $this->width = $width;
@@ -3277,12 +3277,12 @@ namespace app\common\library;
                 $code->encodeString($intext, $this->version, $this->level, $this->hint, $this->casesensitive);
             }
             
-            QRtools::markTime('after_encode');
+            Phpqrcode::markTime('after_encode');
             
             if ($outfile!== false) {
-                file_put_contents($outfile, join("\n", QRtools::binarize($code->data)));
+                file_put_contents($outfile, join("\n", Phpqrcode::binarize($code->data)));
             } else {
-                return QRtools::binarize($code->data);
+                return Phpqrcode::binarize($code->data);
             }
         }
         
@@ -3297,7 +3297,7 @@ namespace app\common\library;
                 ob_end_clean();
                 
                 if ($err != '')
-                    QRtools::log($outfile, $err);
+                    Phpqrcode::log($outfile, $err);
                 
                 $maxSize = (int)(QR_PNG_MAXIMUM_SIZE / (count($tab)+2*$this->margin));
                 
@@ -3305,7 +3305,7 @@ namespace app\common\library;
             
             } catch (Exception $e) {
             
-                QRtools::log($outfile, $e->getMessage());
+                Phpqrcode::log($outfile, $e->getMessage());
             
             }
         }
