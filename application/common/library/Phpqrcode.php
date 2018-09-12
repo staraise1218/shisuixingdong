@@ -157,7 +157,7 @@ namespace app\common\library;
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
- class phpqrcode {
+ class Phpqrcode {
     
         //----------------------------------------------------------------------
         public static function binarize($frame)

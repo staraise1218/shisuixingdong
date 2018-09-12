@@ -6,7 +6,7 @@ use app\common\controller\Frontend;
 use think\Db;
 use app\common\library\payment\Alipay;
 use app\common\library\payment\wxpay\Wxpay;
-use app\common\library\phpqrcode;
+use app\common\library\Phpqrcode;
 
 class Pay extends Frontend
 {
