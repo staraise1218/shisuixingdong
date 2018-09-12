@@ -68,7 +68,7 @@ class Pay extends Frontend
 
 
         if(substr($url, 0, 6) == "weixin"){
-            QRcode::png($url);
+            \QRcode::png($url);
         }
     }
 
