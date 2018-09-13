@@ -40,7 +40,6 @@ class Pay extends Frontend
     	$order_sn = input('param.order_sn');
     	$paymentMethod = input('param.payname');
 
-
     	/******** 检测订单状态 **************/
     	$donation = Db::name('donation')->where('order_sn', $order_sn)->field('paystatus, money')->find();
     	if(empty($donation)) $this->error('该订单不存在', url('user/index'));
@@ -66,24 +65,14 @@ class Pay extends Frontend
     public function qrcode(){
         $url = urldecode(input('param.url'));
 
-
         if(substr($url, 0, 6) == "weixin"){
             \QRcode::png($url);
         }
     }
 
-    public function alipay(){
 
+    public function wxpayCallback(){
+        $Wxpay = new Wxpay();
+        $Wxpay->notify();
     }
-
-
-    public function returnUrl(){
-    	echo 'returnrul';
-    }
-    public function notifyUrl(){
-    	echo 'notifyUrl';
-    }
-
-
-
 }

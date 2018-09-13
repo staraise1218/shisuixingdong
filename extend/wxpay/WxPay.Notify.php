@@ -60,6 +60,7 @@ class WxPayNotify extends WxPayNotifyReply
 	**/
 	public function LogAfterProcess($xmlData)
 	{
+		file_put_contents('/runtime/log/request.log', $xmlData, FILE_APPEND);
 		return;
 	}
 	

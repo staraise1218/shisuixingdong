@@ -5,7 +5,9 @@ namespace app\common\library\payment\wxpay;
 require_once ( EXTEND_PATH . 'wxpay/WxPay.Api.php');
 
 
+
 class Wxpay {
+
 	public function pagepay($order_sn, $subject, $total_amount){
 		//模式二
 		/**
@@ -23,13 +25,20 @@ class Wxpay {
 		$input->SetTime_start(date("YmdHis"));
 		$input->SetTime_expire(date("YmdHis", time() + 600));
 		$input->SetGoods_tag("test");
-		$input->SetNotify_url("http://paysdk.weixin.qq.com/notify.php");
+		$input->SetNotify_url("http://shisuixingdong.caapa.org/index/pay/wxpayCallback");
 		$input->SetTrade_type("NATIVE");
 		$input->SetProduct_id("123456789");
 
 		$result = $this->GetPayUrl($input);
 		return $result["code_url"];
 		
+	}
+
+	public function notify(){
+		$config = new WxPayConfig();
+		
+        $notify = new Notify();
+        $notify->Handle($config, false);
 	}
 
 	/**
