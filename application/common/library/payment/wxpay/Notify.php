@@ -75,7 +75,13 @@ class Notify extends \WxPayNotify
 		}
 
 		//TODO 3、处理业务逻辑
-		
+		$order_sn = substr($data['out_trade_no'], 0, 18);
+		$updatedata = array(
+			'paystatus' => 1,
+			'paytime' => time(),
+			'expirytime' => strtotime('+1 year');
+		);
+		Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
 		Log::info($data);
 		
 		
