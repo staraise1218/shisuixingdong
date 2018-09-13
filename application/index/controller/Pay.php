@@ -6,6 +6,7 @@ use app\common\controller\Frontend;
 use think\Db;
 use app\common\library\payment\Alipay;
 use app\common\library\payment\wxpay\Wxpay;
+use think\Log;
 
 require_once ( EXTEND_PATH . 'phpqrcode/phpqrcode.php');
 
@@ -72,6 +73,8 @@ class Pay extends Frontend
 
 
     public function wxpayCallback(){
+        Log::info(var_export(input('post.')));
+
         $Wxpay = new Wxpay();
         $Wxpay->notify();
     }

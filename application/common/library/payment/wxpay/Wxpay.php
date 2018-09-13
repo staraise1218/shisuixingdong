@@ -36,7 +36,7 @@ class Wxpay {
 
 	public function notify(){
 		$config = new WxPayConfig();
-		
+
         $notify = new Notify();
         $notify->Handle($config, false);
 	}

@@ -71,16 +71,18 @@ class Notify extends \WxPayNotify
 			
 		}
 
-		//TODO 3、处理业务逻辑
-		
-		$notfiyOutput = array();
-		
-		
 		//查询订单，判断订单真实性
 		if(!$this->Queryorder($data["transaction_id"])){
 			$msg = "订单查询失败";
 			return false;
 		}
+
+		//TODO 3、处理业务逻辑
+		
+		$notfiyOutput = array();
+		
+		
+		
 		return true;
 	}
 }
