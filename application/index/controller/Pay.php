@@ -73,9 +73,10 @@ class Pay extends Frontend
 
 
     public function wxpayCallback(){
-        Log::info(var_export(input('post.')));
+        Log::info(var_export(input(''), true));
 
         $Wxpay = new Wxpay();
-        $Wxpay->notify();
+        $result  = $Wxpay->notify();
+        Log::info(var_export($result, true));
     }
 }
