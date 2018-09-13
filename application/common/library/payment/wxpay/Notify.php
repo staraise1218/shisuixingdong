@@ -79,7 +79,7 @@ class Notify extends \WxPayNotify
 		$updatedata = array(
 			'paystatus' => 1,
 			'paytime' => time(),
-			'expirytime' => strtotime('+1 year');
+			'expirytime' => strtotime('+1 year'),
 		);
 		Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
 		Log::info($data);
