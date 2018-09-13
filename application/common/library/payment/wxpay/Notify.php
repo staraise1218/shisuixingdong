@@ -3,6 +3,8 @@
 
 namespace app\common\library\payment\wxpay;
 
+use think\Db;
+use think\Log;
 /**
 *
 * example目录下为简单的支付样例，仅能用于搭建快速体验微信支付使用
@@ -13,6 +15,7 @@ namespace app\common\library\payment\wxpay;
 
 require_once ( EXTEND_PATH . 'wxpay/WxPay.Api.php');
 require_once ( EXTEND_PATH . 'wxpay/WxPay.Notify.php');
+
 
 
 class Notify extends \WxPayNotify
@@ -73,7 +76,7 @@ class Notify extends \WxPayNotify
 
 		//TODO 3、处理业务逻辑
 		
-		$notfiyOutput = array();
+		Log::info($data);
 		
 		
 		
