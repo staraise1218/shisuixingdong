@@ -82,10 +82,10 @@ class Pay extends Frontend
         $order_sn = input('order_sn');
 
         $donation = Db::name('donation')->where('order_sn', $order_sn)->field('paystatus')->find();
-        if(empty($donation)) response_error('', '订单无效');
+        if(empty($donation)) die(array('code'=>400, 'msg'=>'订单无效'));
 
         $status = $donation['paystatus'];
-        response_success(array('status'=> $status));
+        die(json_encode(array('status'=> $status)));
     }
 
     public function resultPage(){
