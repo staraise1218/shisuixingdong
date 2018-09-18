@@ -69,20 +69,27 @@
 	<div class="pay_text clearfix"></div>
 	<div class="pa">
 		<div class="pay_box">
+			{if condition="$paystatus == 1"}
 			<div class="pay_success ac">
 				<!-- 成功 -->
 				<span class="iconfont icon-chenggongyijiejue"></span>
-				<!-- 失败 -->
-				<!-- <span class="iconfont icon-shibaibaocuo"></span> -->
 			</div>
-			<!-- 成功 -->
+
 			<div class="pay_success_word ac">支付成功</div>
-			<!-- 失败 -->
-			<!-- <div class="pay_success_word ac">支付失败</div> -->
-			<!-- 成功 -->
 			<div class="ac"><button class="pay_success_btn">支付成功</button></div>
+			{/if}
+
+			
+			{if condition="$paystatus == 0"}
+			<div class="pay_success ac">
+				<!-- 失败 -->
+				<span class="iconfont icon-shibaibaocuo"></span>
+			</div>
 			<!-- 失败 -->
-			<!-- <div class="ac"><button class="pay_success_btn">重新支付</button></div> -->
+			<div class="pay_success_word ac">支付失败</div>
+			<!-- 失败 -->
+			<div class="ac"><button class="pay_success_btn">重新支付</button></div>
+			{/if}
 		</div>
 	</div>
 	{include file="common/footer" /}

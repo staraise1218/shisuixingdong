@@ -126,8 +126,6 @@
 	                url: "/index/pay/getPayStatus?order_sn={$order_sn}",
 	                dataType: "json",
 	                success: function(data) {
-	                	console.log(data);
-	                	console.log(data.code, data.status);
 	                 	if(data.code == 200 && data.status == '1'){
 	                 		window.location = "{:url('index/pay/resultPage', array('paystatus'=>1))}";
 	                 	}   
