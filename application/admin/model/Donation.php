@@ -28,7 +28,7 @@ class Donation extends Model
     
     public function getPaystatusList()
     {
-        return ['0' => __('Paystatus 0'),'1' => __('Paystatus 1'),'2' => __('Paystatus 2'),'3' => __('Paystatus 3')];
+        return ['0' => __('Paystatus 0'),'1' => __('Paystatus 1')];
     }     
 
     public function getSexList()

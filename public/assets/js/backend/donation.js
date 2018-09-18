@@ -31,7 +31,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'year', title: __('Year')},
                         {field: 'money', title: __('Money'), operate:'BETWEEN'},
                         {field: 'paytime', title: __('Paytime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'paystatus', title: __('Paystatus'), visible:false, searchList: {"0":__('Paystatus 0'),"1":__('Paystatus 1'),"2":__('Paystatus 2'),"3":__('Paystatus 3')}},
+                        {field: 'paystatus', title: __('Paystatus'), visible:false, searchList: {"0":__('Paystatus 0'),"1":__('Paystatus 1')}},
                         {field: 'paystatus_text', title: __('Paystatus'), operate:false},
                         {field: 'expirytime', title: __('Expirytime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},

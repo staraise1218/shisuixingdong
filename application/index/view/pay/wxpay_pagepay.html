@@ -15,7 +15,69 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/track.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/pay.css">
-
+	<style type="text/css">
+		.fl{
+			float:left;
+		}
+		.fr{
+			float:right;
+		}
+		.clearfix:after{
+			clear: both;
+			content: "";
+			display: block;
+		}
+		.clearfix{zoom:1;}
+		.pa .pay_text .paybox_text_amount .money{
+			color: red;
+			font-size: 18px;
+		}
+		.pa .pay_text {
+			padding: 20px 0;
+		}
+		.pa .pay_box{
+			width: 930px;
+			height: 529px;	
+			padding: 12px 30px;
+			box-shadow: 0 14px 20px rgba(0,0,0,.13);
+			margin: 0 auto;
+			background-color: #fff;
+		}
+		.pa .pay_box .pay_box_text{
+			padding-bottom: 20px;
+		}
+		.pa .pay_box .pay_box_text span{
+			font-size: 20px;
+			padding-right: 50px;
+		}
+		.pa .pay_box .pay_box_text i{
+			font-style: normal;
+			color: red;
+		}
+		.pay_box_pic{
+			margin-left: 130px;
+		}
+		.pay_box_pic1 img{
+			width: 298px;
+			height: 298px;
+		}
+		.pay_box_pic1 span{
+			width: 298px;
+			height: 60px;
+			display: inline-block;
+			color: #fff;
+			padding: 8px 0 8px 125px;
+			background: #ff7674 ;
+		}
+		.pay_box_pic2{
+			background: url(/static/images/phone.png) 50px 0 no-repeat;
+			width: 379px;
+			height: 421px;
+		}
+		.pay_box_method a{
+			color: #67a4ff;
+		}
+	</style>
 </head>
 <body>
 	{include file="common/top" /}
@@ -27,16 +89,24 @@
 		</ol>
 	</div>
 	<!-- 捐款 -->
+
 	<div class="pa">
-		<div class="pay_title">支付中心</div>
-		<div class="pay_body white_bg">
-			<div class="pay_body_title">
-				<div class="pay_body_word">请扫码支付</div>
+		<div class="pay_text clearfix">
+			<p class="fl">订单提交成功，请尽快付款！订单号：77845350390</p>
+			<div class="paybox_text_amount fr">应付金额<span class="money">5599.00</span>元</div>
+		</div>
+		<div class="pay_box">
+			<p class="pay_box_text"><span>微信支付</span>距离二维码过期还剩<i>20</i>秒，过期后请刷新页面重新获取二维码。</p>
+			<div class="pay_box_pic clearfix">
+				<div class="pay_box_pic1 fl">
+					<img src="/index/pay/qrcode?url={:urlencode($code_url)}" alt="微信支付二维码" width="200" height="200"><br/>
+					<span>请使用微信扫一扫<br/>扫描二维码使用</span>
+				</div>
+				<div class="pay_box_pic2 fl">
+					
+				</div>
 			</div>
-			<div class="pay_method">
-				<img src="/index/pay/qrcode?url={:urlencode($code_url)}" alt="微信支付二维码" width="200" height="200">
-			</div>
-			<div style="clear: both;"></div>
+			<div class="pay_box_method"><a href="pay.html">选择其他支付方式</a></div>
 		</div>
 	</div>
 	{include file="common/footer" /}
