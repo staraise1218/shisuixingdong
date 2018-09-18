@@ -81,7 +81,7 @@ class Pay extends Frontend
     public function getPayStatus(){
         $order_sn = input('order_sn');
 
-        $donation = M('donation')->where('order_sn', $order_sn)->field('paystatus')->find();
+        $donation = Db::name('donation')->where('order_sn', $order_sn)->field('paystatus')->find();
         if(empty($donation)) response_error('', '订单无效');
 
         $status = $donation['paystatus'];
