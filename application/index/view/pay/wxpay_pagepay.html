@@ -129,7 +129,7 @@
 	                	console.log(data);
 	                	console.log(data.code, data.status);
 	                 	if(data.code == 200 && data.status == '1'){
-	                 		window.href = "{:url('index/pay/resultPage', array('paystatus'=>1))}";
+	                 		window.location = "{:url('index/pay/resultPage', array('paystatus'=>1))}";
 	                 	}   
 	                }
 	            });
