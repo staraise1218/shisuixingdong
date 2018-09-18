@@ -85,7 +85,7 @@ class Pay extends Frontend
         if(empty($donation)) die(array('code'=>400, 'msg'=>'订单无效'));
 
         $status = $donation['paystatus'];
-        die(json_encode(array('status'=> $status)));
+        die(json_encode(array('code'=>200, 'status'=> $status)));
     }
 
     public function resultPage(){
