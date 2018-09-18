@@ -77,6 +77,10 @@
 		.pay_box_method a{
 			color: #67a4ff;
 		}
+		.icon-saoma{
+			margin-right: 40px;
+			font-size: 40px;
+		}
 	</style>
 </head>
 <body>
@@ -100,7 +104,10 @@
 			<div class="pay_box_pic clearfix">
 				<div class="pay_box_pic1 fl">
 					<img src="/index/pay/qrcode?url={:urlencode($code_url)}" alt="微信支付二维码" width="200" height="200"><br/>
-					<span>请使用微信扫一扫<br/>扫描二维码使用</span>
+					<div class="pay_box_item">
+						<i class="iconfont icon-saoma fl"></i>
+						<span>请使用微信扫一扫扫描二维码使用</span>
+					</div>
 				</div>
 				<div class="pay_box_pic2 fl">
 					

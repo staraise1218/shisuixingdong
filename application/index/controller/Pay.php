@@ -73,13 +73,12 @@ class Pay extends Frontend
         }
     }
 
-
     public function wxpayCallback(){
         $Wxpay = new Wxpay();
         $Wxpay->notify();
     }
 
     public function getPayStatus(){
-        
+
     }
 }
