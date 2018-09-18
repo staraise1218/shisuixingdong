@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-学生详情</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/details.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/track.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/pay.css">
+	<style type="text/css">
+		.money{
+			color: red;
+			font-size: 18px;
+		}
+		.pay_text {
+			padding: 20px 0;
+		}
+		.pay_box{
+			width: 930px;
+			height: 529px;	
+			padding: 30px;
+			box-shadow: 0 14px 20px rgba(0,0,0,.13);
+			margin: 0 auto;
+			background-color: #fff;
+		}
+		.pay_success span{
+			font-size: 150px;
+			/*成功*/
+			color: #00bb00;
+			/*失败*/
+			/*color: #ed2b2f;*/
+		}
+		.pay_success_word{
+			font-size: 28px;
+		}
+		.pay_success_btn{
+			width: 120px;
+			height: 44px;
+			margin-top: 40px;
+			/*成功*/
+			background-color:#00bb00;
+			/*失败*/
+			/*background-color:#ed2b2f;*/
+			color: #fff; 
+			border: none;
+			outline: none;
+			font-size: 18px;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="/">首页</a></li>
+			<li class="active active_bread">支付中心</li>
+		</ol>
+	</div>
+	<!-- 捐款 -->
+	<div class="pay_text clearfix"></div>
+	<div class="pa">
+		<div class="pay_box">
+			<div class="pay_success ac">
+				<!-- 成功 -->
+				<span class="iconfont icon-chenggongyijiejue"></span>
+				<!-- 失败 -->
+				<!-- <span class="iconfont icon-shibaibaocuo"></span> -->
+			</div>
+			<!-- 成功 -->
+			<div class="pay_success_word ac">支付成功</div>
+			<!-- 失败 -->
+			<!-- <div class="pay_success_word ac">支付失败</div> -->
+			<!-- 成功 -->
+			<div class="ac"><button class="pay_success_btn">支付成功</button></div>
+			<!-- 失败 -->
+			<!-- <div class="ac"><button class="pay_success_btn">重新支付</button></div> -->
+		</div>
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

@@ -79,7 +79,7 @@ class Pay extends Frontend
     }
 
     public function getPayStatus(){
-        $order_sn = I('order_sn');
+        $order_sn = input('order_sn');
 
         $donation = M('donation')->where('order_sn', $order_sn)->field('paystatus')->find();
         if(empty($donation)) response_error('', '订单无效');
@@ -89,6 +89,9 @@ class Pay extends Frontend
     }
 
     public function resultPage(){
-        
+        $paystatus = input('paystatus');
+
+        $this->assign('paystatus', $paystatus);
+        return $this->fetch();
     }
 }

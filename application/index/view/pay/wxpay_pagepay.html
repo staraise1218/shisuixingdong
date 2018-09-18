@@ -127,7 +127,7 @@
 	                dataType: "json",
 	                success: function(data) {
 	                 	if(data.code == 200 && data.data.status == 1){
-	                 		window.href = "{:U('index/pay/resultPage')}";
+	                 		window.href = "{:url('index/pay/resultPage', array('paystatus'=>1))}";
 	                 	}   
 	                }
 	            });
