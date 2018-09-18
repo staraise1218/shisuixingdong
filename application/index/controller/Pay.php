@@ -59,6 +59,8 @@ class Pay extends Frontend
             $code_url = $Wxpay->pagepay($order_sn, $subject, $total_amount);
 
             $this->assign('code_url', $code_url);
+            $this->assign('order_sn', $order_sn);
+            $this->assign('total_amount', $total_amount);
             return $this->fetch('wxpay_pagepay');
         }
     }
@@ -75,5 +77,9 @@ class Pay extends Frontend
     public function wxpayCallback(){
         $Wxpay = new Wxpay();
         $Wxpay->notify();
+    }
+
+    public function getPayStatus(){
+        
     }
 }
