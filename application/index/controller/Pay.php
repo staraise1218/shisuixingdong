@@ -76,8 +76,8 @@ class Pay extends Frontend
     public function alipayCallback(){
         $Alipay = new Alipay();
         $checkResult = $Alipay->checkSign();
-file_put_contents(RUNTIME_PATH.'log/request.log',var_export($_POST, true), FILE_APPEND);
-file_put_contents(RUNTIME_PATH.'log/request.log',$checkResult, FILE_APPEND);
+// file_put_contents(RUNTIME_PATH.'log/request.log',var_export($_POST, true), FILE_APPEND);
+// file_put_contents(RUNTIME_PATH.'log/request.log',$checkResult, FILE_APPEND);
         if( FALSE == $checkResult) return false;
         // 处理业务流程
         if($_POST['trade_status'] == 'TRADE_SUCCESS'){
