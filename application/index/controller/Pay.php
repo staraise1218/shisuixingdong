@@ -78,8 +78,7 @@ class Pay extends Frontend
         // if( FALSE == $Alipay->checkSign()) return false;
 file_put_contents(RUNTIME_PATH.'log/request.log',var_export($_POST, true), FILE_APPEND);
         // 处理业务流程
-        if($_POST['trade_status'] == 'TRADE_SUCCESS'){
-            $order_sn = input('param.out_trade_no');
+$order_sn = $_POST['out_trade_no'];
             file_put_contents(RUNTIME_PATH.'log/request.log',$order_sn, FILE_APPEND);
             $updatedata = array(
                 'paystatus' => 1,
@@ -88,7 +87,17 @@ file_put_contents(RUNTIME_PATH.'log/request.log',var_export($_POST, true), FILE_
                 'expirytime' => strtotime('+1 year'),
             );
             Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
-        }
+        // if($_POST['trade_status'] == 'TRADE_SUCCESS'){
+        //     $order_sn = $_POST['out_trade_no'];
+        //     file_put_contents(RUNTIME_PATH.'log/request.log',$order_sn, FILE_APPEND);
+        //     $updatedata = array(
+        //         'paystatus' => 1,
+        //         'paytime' => time(),
+        //         'payment_method' => 'alipay',
+        //         'expirytime' => strtotime('+1 year'),
+        //     );
+        //     Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
+        // }
 
         echo 'success';
     }
