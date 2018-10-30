@@ -80,7 +80,6 @@ file_put_contents(RUNTIME_PATH.'log/request.log',var_export($_POST, true), FILE_
         // 处理业务流程
         if($_POST['trade_status'] == 'TRADE_SUCCESS'){
             $order_sn = input('param.out_trade_no');
-            $order_sn = substr($order_sn, 0, 18);
             $updatedata = array(
                 'paystatus' => 1,
                 'paytime' => time(),
