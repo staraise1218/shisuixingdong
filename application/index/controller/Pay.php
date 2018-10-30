@@ -74,9 +74,9 @@ class Pay extends Frontend
     }
     // 支付宝支付回调
     public function alipayCallback(){
-        $Alipay = new Alipay();
+        // $Alipay = new Alipay();
         // if( FALSE == $Alipay->checkSign()) return false;
-
+file_put_contents('runtime/log/request.log',var_export($_POST, true), FILE_APPEND);
         // 处理业务流程
         if($_POST['trade_status'] == 'TRADE_SUCCESS'){
             $order_sn = input('param.out_trade_no');
