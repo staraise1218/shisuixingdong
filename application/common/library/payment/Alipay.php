@@ -8,8 +8,9 @@ class Alipay {
 	// 支付宝支付网关
 	private $gatewayUrl = 'https://openapi.alipay.com/gateway.do';
 	// 支付宝分配给开发者的应用ID
-	private $appId = '2018080660972237';
-	private $rsaPrivateKey = 'MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJ0rGQ4VhZipD6888u+xDL4lfaOQf+81THwDHFYRtcTHPFi4AFCP+A9sp9+WsA1kPFZqfjVPHyG/J8em7LNwyzTeUqrZfXjQMaR2yfLhTLaj/ljgiQbInjefSL8OWlc+mdBMx4obHW9jAtAv1X6/Uh2UBzTO0WVO3aO7IAbNw2pJAgMBAAECgYABLqrQlU7c+CCbE91L+kv7PjL0wQiFVyRNJoTXDOkOIuWMUU4HTR3zl8CniO2oHCHsEH8EjaTRTyvQb6wGKYoNx70gSoWhPWmAWIi9Vasw9Z47UQFhyF/WTJoDyg2BwE2BgS9zehyakZt8JlQ7P8WFqP/C5ni+ltA1SNX4OKc4gQJBANEXMZJ1dZUv9mjs5rTWhg0pJBULBP8lI8PA1dGqSH8c+wtljFUysXEF/dm2JFNvbdVG67K5PrvReAWxC4eLNPECQQDAbdPQKNmqyK+X8eLwePqvI6ZkUGvYNb3zQRZg4gJiZ6SauF2Lt4AK4ncKoWPER7hNVNlYg5ujxPrf4bXjVCrZAkEAt6tZF19ov3lXSgo4CsibDrqCAJ4icIJObWlaKggcENUDTZqRcFHMfw0VVYZjWIt8fqoC54dELTYu6UkBaLqG8QJAPLzt1JBwVBXQRveUmC63gbyQ8qznvXEJKdTriV0NP55TOHrlHAqpocXlqTdT1EqHA/G6QNQZtlGgljYaQUz50QJASDdc4ihxieZ+DwspwHL5wH+ch37E+D2ZL4Pt02SrcwFYhOHLkHCM3wMfOo9KR+fZjXqOYE7p/UruKElX4qyoGQ==';
+	private $appId = '2018102561805577';
+	private $rsaPrivateKey = 'MIIEpAIBAAKCAQEAvTZBCoTp/C4HTYZmPenWNEJi4lDp3DQX0Fs4agwbvq2z4PuBFtFh3Sucmj9vWYpgBP2IGAdqouaeU5Lx3d9P36CYlE5VffUWjZEsjXJy23bMJgrI1dVEzjKWV0QT29TPtxu7YGLdrpLtS7AWKG9ybT9O2RndzmIdjFyrsTgo48hBArNxI/WLqyl4FkVVpRTLzFCcY3XF76M6M/uS6kZn4egCb/b/Li2mJwKzYDqG5cvXRqd+urt3roEIHbAXev6nhEiH8kAWP//Myw5JmjoVVgMy9x15A+b2/FfpkEaEtnGr8mk6QJ5ElZyTuNpBV0kq+xLhXCjpuletmyZx0WXanQIDAQABAoIBAQCd0shTxuQJJjePMcDMeeTjOFCU59r5gzYt5DjdM/ZciTUWP5LAfqv7uKnqe2kcrfBDmVpQeLc449ZCbbpzUBamuKUsZ16mLq2+Lc6UuVcWujO0s6ArxLWcrNN8PNu3rP4JhQc5cZ3pRMLMNDd3SOaQO5NAQXQi9vIgpxfLPcXVoD3pXaYYnpi7TalWh677gh+56m0PcZR7Vxyoiimjd5nvNDhEfRd86agEAozSPw5jVtJ6rOYoXdDeqs8Xge6PRD4j3f/zSgDNSGW8+tS3M5DE7M4a+1B8X7Dj/SwDZzrRZmQ9oJVdQYIKyeORB2biWf5Cxg1qIpPxgMqBLNDCg0GhAoGBAPFYXFiBdOrIVmnfWnWGYWQTOzauc3ELYPe8uVrXR4ViKsAM1PCX33+znTPbJDdFGKhY4ykHH0Bg56MT32Cdbub7leQnANi8CwABGKKAoRUtZvp2J+P+C6xtrvXIZWTMKCAIhAZsysUzSmHUPSiqF5Yo4SxwcCmMaOh4zyqnYUXJAoGBAMizf2fq+qTp+A2vN1CXoZb0y/PsUpEmKS+9aXGPhHB4yfUlY8d/hEvSvu1DjYeX3xG32CPnwGtzlvq2YuQuv4bgIUwDXBs3HsT/yyHDc4bemKghYW0ksGlsxK92IqFik1zeERQC7KTvq6UA1X/rr2TQ5nG4+KacBzmaLKv2Ayg1AoGBAKxBnOeuvnw0sTivqijn2OtMrp7AtLSionsvwDwOG4YgItMgVXvDakoDMNiqOJcaQhcmGjxWUP/qKmpC7NRQia9jMgC9teT7kf5WyfZySIaM+Usaui4ITNytDItwlK306U6zxUewrqlBin14to4nmN4cH1tQhT2icd47G+IdxVfBAoGAN2btVZdU5y867TQf9dxVm+EpZ8UlqbG6Dtafg9yVN6LwRP60Q37c2z1qvP431GVFC5QPUyIHSOIYnE66j7ij4CyApIYM5+pYURM3VLOqcWGDDG5igYluNTv0M2dN+fTHLwyR9E82WfVbEWpghTZfLVpJMr1Xzk4l5G29xR5dEr0CgYB1ZNDSIgf81cmOHyT+zOL/I9o7mAQhpMOXiNQclX2iXR8KOZeWti5xXEHQPsgoRRu7nvx70LqAw8fAXvVFPSsT8ofhRwcqS1tY/YYu3/dMbzrKWQTECfyJA3HlncdfxVX5ZL/wJj/UB0qVUiJtGKLJIWwdcBb+Ig+6cERnMJ2Qtw==';
+	private $alipayrsaPublicKey = '';
 	private $apiVersion = '1.0';
 	private $signType = 'RSA2';
 	private $postCharset = 'utf-8';
@@ -47,5 +48,14 @@ class Alipay {
 
 		$result = $aop->pageExecute ($request);
 		echo $result;
+	}
+
+	// 回调验签
+	public function checkSign(){
+		$aop = new \AopClient;
+		$aop->alipayrsaPublicKey = $this->alipayrsaPublicKey;
+		$signType = $this->signType;
+file_put_contents('runtime/log/request.log',var_export($_POST, true), FILE_APPEND);
+		return $aop->rsaCheckV1($_POST, $this->alipayrsaPublicKey, $signType);
 	}
 }

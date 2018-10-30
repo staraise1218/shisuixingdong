@@ -72,7 +72,27 @@ class Pay extends Frontend
             \QRcode::png($url);
         }
     }
+    // 支付宝支付回调
+    public function alipayCallback(){
+        $Alipay = new Alipay();
+        if( FALSE == $Alipay->checkSign()) return false;
 
+        // 处理业务流程
+        if($_POST['trade_status'] == 'SUCCESS'){
+            $order_sn = input('param.out_trade_no');
+            $order_sn = substr($order_sn, 0, 18);
+            $updatedata = array(
+                'paystatus' => 1,
+                'paytime' => time(),
+                'expirytime' => strtotime('+1 year'),
+            );
+            Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
+        }
+
+        echo 'success';
+    }
+
+    // 微信支付回调
     public function wxpayCallback(){
         $Wxpay = new Wxpay();
         $Wxpay->notify();
