@@ -117,6 +117,6 @@ class Pay extends Frontend
 
     public function resultPage_alipay(){
         $this->assign('paystatus', 1);
-        return $this->fetch();
+        return $this->fetch('result_page');
     }
 }
