@@ -74,14 +74,13 @@ class Pay extends Frontend
     }
     // 支付宝支付回调
     public function alipayCallback(){
-        // $Alipay = new Alipay();
-        // if( FALSE == $Alipay->checkSign()) return false;
+        $Alipay = new Alipay();
+        if( FALSE == $check = $Alipay->checkSign()) return false;
 file_put_contents(RUNTIME_PATH.'log/request.log',var_export($_POST, true), FILE_APPEND);
-file_put_contents(RUNTIME_PATH.'log/request.log',$_POST['trade_status'], FILE_APPEND);
+file_put_contents(RUNTIME_PATH.'log/request.log',$check, FILE_APPEND);
         // 处理业务流程
         if($_POST['trade_status'] == 'TRADE_SUCCESS'){
             $order_sn = $_POST['out_trade_no'];
-            file_put_contents(RUNTIME_PATH.'log/request.log',$order_sn, FILE_APPEND);
             $updatedata = array(
                 'paystatus' => 1,
                 'paytime' => time(),
