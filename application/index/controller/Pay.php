@@ -78,12 +78,13 @@ class Pay extends Frontend
         // if( FALSE == $Alipay->checkSign()) return false;
 
         // 处理业务流程
-        if($_POST['trade_status'] == 'SUCCESS'){
+        if($_POST['trade_status'] == 'TRADE_SUCCESS'){
             $order_sn = input('param.out_trade_no');
             $order_sn = substr($order_sn, 0, 18);
             $updatedata = array(
                 'paystatus' => 1,
                 'paytime' => time(),
+                'payment_method' => 'alipay',
                 'expirytime' => strtotime('+1 year'),
             );
             Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
