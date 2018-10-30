@@ -21,7 +21,7 @@ class Wxpay {
 		$input->SetBody($subject);
 		$input->SetAttach("test");
 		$input->SetOut_trade_no($order_sn.date("YmdHis"));
-		$input->SetTotal_fee("1");
+		$input->SetTotal_fee($total_amount);
 		$input->SetTime_start(date("YmdHis"));
 		$input->SetTime_expire(date("YmdHis", time() + 600));
 		$input->SetGoods_tag("test");
