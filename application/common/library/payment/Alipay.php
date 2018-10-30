@@ -16,7 +16,7 @@ class Alipay {
 	private $postCharset = 'utf-8';
 	private $format = 'json';
 	private $returnUrl = 'http://shisuixingdong.caapa.org/index/pay/resultPage';
-	private $notifyUrl = 'http://shisuixingdong.caapa.org/index/pay/alipayCallback';
+	private $notifyUrl = 'http://shisuixingdong.caapa.org/index/pay/resultPage_alipay';
 
 
 	public function __construct(){
