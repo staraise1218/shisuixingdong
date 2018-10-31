@@ -93,6 +93,7 @@
 		</div>
 	</div>
 	<!-- 学生列表 -->
+	{if count($list) > 0}
 	<div class="pa">
 		{foreach $list as $item}
 		<div class=" col-lg-3 col-md-4 col-sm-6">
@@ -111,10 +112,14 @@
 			<div class="item_mr"></div>
 		</div>
 		{/foreach}
+		
 	</div>
 	<div class="pa ac">
 		{$list->render()}
 	</div>
+	{else/}
+	<div style="text-align: center; padding: 30px; font-size: 18px;">没有满足您筛选条件的学生</div>
+	{/if}
 	{include file="common/footer" /}
 </body>
 </html>
