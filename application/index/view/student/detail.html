@@ -43,7 +43,7 @@
 				</div>
 				{if condition="$info.donation_status eq 2"}
 				<div class="details_infoma details_bottom" style="padding-top: 20px;">
-					<p>捐助者： <span>{$donation.fullname}</span></p>
+					<!-- <p>捐助者： <span>{$donation.fullname}</span></p> -->
 					<p>捐助年限： <span>{$donation.paytime|date="Y-m-d", ###} - {$donation.expirytime|date="Y-m-d", ###}</span></p>
 				</div>
 				{/if}

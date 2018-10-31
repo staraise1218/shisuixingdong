@@ -98,6 +98,13 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
             });
         },
         personal: function(){
+            // 给上传按钮添加上传成功事件
+            $("#plupload-avatar").data("upload-success", function (data) {
+                var url = Fast.api.cdnurl(data.url);
+                $("img.avatar").prop("src", url);
+                Toastr.success(__('Upload successful'));
+            });
+            
             $('#personal-form').data('validator-options', validatoroptions);
 
             Form.api.bindevent($('#personal-form'), function(data, ret) {

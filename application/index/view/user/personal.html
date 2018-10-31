@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>个人中心</title>
+	<title>资料设置</title>
 	<meta charset="UTF-8">
 	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 	<!-- <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
@@ -20,8 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/track.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
 	
-    
-	
 </head>
 <body>
 	{include file="common/top" /}
@@ -30,7 +28,7 @@
 		<ol class="breadcrumb white_bg">
 			<li><a href="/">首页</a></li>
 			<li><a href="{:url('user/index')}">我的捐赠</a></li>
-			<li class="active active_bread">个人中心</li>
+			<li class="active active_bread">资料设置</li>
 		</ol>
 	</div>
 	<!-- 捐款 -->
@@ -95,7 +93,9 @@
 					</style>
 					<div class="personal_item contributor_item">
 						<span class="contributor_name">修改头像：</span>
-						<div class="personal_jia ac">+</div>
+						<img class="avatar" src="{$user.avatar}" alt="" style="margin-right: 20px;" width="80" height="80">
+						<div class="personal_jia ac plupload" id="plupload-avatar" data-mimetype="png,jpg,jpeg,gif" data-input-id="c-avatar">+</div>
+						<input type="hidden" name="avatar" id="c-avatar" value="{$user.avatar}" />
 					</div>
 					<div class="ac">
 						<button type="submit" class="details_btn ac">保存修改</button>

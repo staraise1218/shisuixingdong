@@ -112,6 +112,7 @@
 	display: inline-block;
 	background-color: #f4f4f6;
 	color:#e4e4e4;
+	cursor: pointer;
 }
 
 .details_btn{
