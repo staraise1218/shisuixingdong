@@ -13,7 +13,9 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/track.css">
-
+	<style type="text/css">
+		.details_content img{ max-width: 100%; }
+	</style>
 </head>
 <body>
 	{include file="common/top" /}
@@ -37,7 +39,11 @@
 					<p>编号： <span>{$info.number}</span></p>
 					<p>学校： <span>{$info.school_name}</span></p>
 				</div>
-				<div>家庭： <span>{$info.family_status}</span></div>
+				<div class="details_infoma">
+					<p>家庭： <span>{$info.family_status}</span></p>
+					<p>地区： <span>{$info.city}</span></p>
+					<p>资助状态： <span>{$info.donation_status == '1' ? '待资助' : '资助中'}</span></p>
+				</div>
 				{if condition="$info.donation_status eq 2"}
 				<div class="details_infoma details_bottom" style="padding-top: 20px;">
 					<p>捐助者： <span>{$donation.fullname}</span></p>
