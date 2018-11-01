@@ -68,11 +68,11 @@
 						<input class="contributor_input" type="text" data-rule="职业:length(~60)" name="profession" value="{$userinfo.profession}">
 					</div>
 					<div class="contributor_item">
-						<p class="contributor_name">地址</p>
+						<p class="contributor_name">地址 <span class="xing">*</span></p>
 						<div style="position: relative;">
 
-							<input class="contributor_input contributor_selinput" style="width: 200px;"  data-toggle="city-picker" type="text" name="address" value="{$userinfo.address}">
-							<input class="contributor_input contributor_selinput" data-rule="详细地址:length(~60)" name="address_detail" placeholder="详细地址" type="text" value="{$userinfo.address_detail}">
+							<input class="contributor_input contributor_selinput" style="width: 200px;"  data-toggle="city-picker" data-rule="城市:require" type="text" name="address" value="{$userinfo.address}">
+							<input class="contributor_input contributor_selinput" data-rule="详细地址:require;length(~60)" name="address_detail" placeholder="详细地址" type="text" value="{$userinfo.address_detail}">
 
 						</div>
 						<style type="text/css">

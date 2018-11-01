@@ -306,6 +306,7 @@ class User extends Frontend
             $profession = input('post.profession');
             $address = input('post.address');
             $address_detail = input('post.address_detail');
+            $avatar = input('post.avatar');
             $token = input('poat.__token__');
 
             $data = array(
@@ -316,6 +317,7 @@ class User extends Frontend
                 'gender' => $gender,
                 'address' => $address,
                 'address_detail' => $address_detail,
+                'avatar' => $avatar,
                 '__token__' => $token,
             );
 
