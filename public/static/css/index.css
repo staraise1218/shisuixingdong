@@ -6,7 +6,7 @@ body{
 .pa{
     width: 100%;
     padding: 0 15%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     box-sizing: border-box;
 }
 
@@ -105,8 +105,18 @@ nav{
 .nav_list li{
 	font-size: 18px;
 	float: left;
-	padding: 12px 34px;
+	padding: 12px 27px;
+	position: relative;
 }
+.nav_list li:hover {background: #c81d1c;}
+.nav_list li:hover a{
+	color: #f5f5f5;
+	text-decoration: none;
+}
+
+.nav_list li .subnav{position: absolute; background: #c81d1c; z-index: 10; top:49px; left: 0; padding: 10px 27px; display: none}
+.nav_list li .subnav a {display: block; line-height: 38px;}
+/*.nav_list li .subnav a:hover{ background:  }*/
 
 .active_bg{
 	background-color: #c81d1c;
@@ -310,3 +320,4 @@ a:hover{
 .jump_input{
 	width: 78% !important;
 }
+.clear {clear: both;}

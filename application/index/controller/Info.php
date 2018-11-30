@@ -5,7 +5,7 @@ namespace app\index\controller;
 use app\common\controller\Frontend;
 use think\Db;
 
-class Article extends Frontend
+class Info extends Frontend
 {
 
     protected $noNeedLogin = '*';
@@ -22,18 +22,18 @@ class Article extends Frontend
         $keyword = input('keyword');
         $category_id = input('category_id');
 
-        $where = array('status' => 1);
+        $where = array();
         if($keyword) $where['title'] = array('title', 'like', "'%$keyword%'");
         if($category_id) $where['category_id'] = $category_id;
         // 获取文章
-        $list = Db::name('article')
+        $list = Db::name('info')
             ->where($where)
             ->field('id, title, createtime')
             ->order('weigh desc')
             ->paginate(20);
 
         // 文字分类
-        $category = Db::name('category')->where('type', 'article')->select();
+        $category = Db::name('category')->where('type', 'info')->select();
         
 
         $this->assign('list', $list);
@@ -45,7 +45,7 @@ class Article extends Frontend
     public function detail(){
         $id = input('param.id');
 
-        $info = Db::name('article')->where('id', $id)->find();
+        $info = Db::name('info')->where('id', $id)->find();
 
         if(empty($info)){
             $this->error('文章不存在');

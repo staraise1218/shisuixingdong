@@ -1,5 +1,6 @@
 <?php
 
+use think\Db;
 // 公共助手函数
 
 if (!function_exists('__')) {
@@ -313,4 +314,12 @@ function p(){
         echo '---------';
     }
     die();
+}
+
+function getMenuCategory($type){
+    $category = Db::name('category')
+        ->where('type', $type)
+        ->field('id, name')
+        ->select();
+    return $category;
 }

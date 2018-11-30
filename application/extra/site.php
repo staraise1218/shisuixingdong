@@ -17,6 +17,8 @@ return array (
   array (
     'page' => 'Page',
     'article' => '活动资讯',
+    'info' => '信息公示',
+    'partner' => '我们的伙伴',
   ),
   'configgroup' => 
   array (

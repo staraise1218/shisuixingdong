@@ -18,7 +18,7 @@
 	<div class="pa white_bg">
 		<ol class="breadcrumb white_bg">
 			<li><a href="/">首页</a></li>
-			<li class="active active_bread">活动资讯</li>
+			<li class="active active_bread">我们的伙伴</li>
 		</ol>
 	</div>
 	
@@ -27,8 +27,11 @@
 		<div class="leftnav">
 			<ul>
 				{foreach name="category" item="item"}
-				<li  {if condition="$category_id eq $item.id"}class="active"{/if}><a href="{:url('index/article/index', array('category_id'=>$item.id))}">{$item.name}</a></li>
+				<li  {if condition="$category_id eq $item.id"}class="active"{/if}><a href="{:url('index/partner/index', array('category_id'=>$item.id))}">{$item.name}</a></li>
 				{/foreach}
+				<li  {if condition="$id eq 1"}class="active"{/if}><a href="{:url('index/partner/page', array('id'=>1))}">企业合作伙伴</a></li>
+                <li  {if condition="$id eq 2"}class="active"{/if}><a href="{:url('index/partner/page', array('id'=>2))}">拾穗执行团队</a></li>
+                <li  {if condition="$id eq 3"}class="active"{/if}><a href="{:url('index/partner/page', array('id'=>3))}">明星公益伙伴</a></li>
 			</ul>
 		</div>
 		<div class="article white_bg rightContainer">
