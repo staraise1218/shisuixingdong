@@ -40,6 +40,7 @@ class Rule extends Backend
                 continue;
             $ruledata[$v['id']] = $v['title'];
         }
+        p($ruledata);
         $this->view->assign('ruledata', $ruledata);
     }
 
