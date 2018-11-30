@@ -40,7 +40,6 @@ class Rule extends Backend
                 continue;
             $ruledata[$v['id']] = $v['title'];
         }
-        p($ruledata);
         $this->view->assign('ruledata', $ruledata);
     }
 
@@ -55,7 +54,7 @@ class Rule extends Backend
             $total = count($this->rulelist);
 
             $result = array("total" => $total, "rows" => $list);
-
+p($result);
             return json($result);
         }
         return $this->view->fetch();
