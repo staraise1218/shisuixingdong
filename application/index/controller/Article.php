@@ -19,7 +19,8 @@ class Article extends Frontend
 
     public function index()
     {
-        $keyword = input('get.keyword');
+        $keyword = input('keyword');
+        $category_id = input('category_id');
 
         $where = array('status' => 1);
         if($keyword) $where['title'] = array('title', 'like', "'%$keyword%'");
@@ -30,7 +31,13 @@ class Article extends Frontend
             ->order('weigh desc')
             ->paginate(20);
 
+        // 文字分类
+        $category = Db::name('category')->where('type', 'article')->select();
+        
+
         $this->assign('list', $list);
+        $this->assign('category', $category);
+        $this->assign('category_id', $category_id);
         return $this->fetch();
     }
 

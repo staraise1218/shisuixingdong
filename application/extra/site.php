@@ -16,7 +16,7 @@ return array (
   'categorytype' => 
   array (
     'page' => 'Page',
-    'article' => 'Article',
+    'article' => '活动资讯',
   ),
   'configgroup' => 
   array (

@@ -18,13 +18,20 @@
 	<div class="pa white_bg">
 		<ol class="breadcrumb white_bg">
 			<li><a href="/">首页</a></li>
-			<li class="active active_bread">全部文章</li>
+			<li class="active active_bread">活动资讯</li>
 		</ol>
 	</div>
 	
 	<!-- 全部文章 -->
 	<div class="pa">
-		<div class="article white_bg">
+		<div class="leftnav">
+			<ul>
+				{foreach name="category" item="item"}
+				<li  {if condition="$category_id eq $item.id"}class="active"{/if}><a href="{:url('index/article/index', array('category_id'=>$item.id))}">{$item.name}</a></li>
+				{/foreach}
+			</ul>
+		</div>
+		<div class="article white_bg rightContainer">
 			<div class="article_top">
 				<div class="article_search fr">
 					<div class="nav_input">
@@ -39,7 +46,7 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th style="width: 200px;">标题</th>
+							<th style="width: 500px;" >标题</th>
 							<th>发表时间</th>
 						</tr>
 					</thead>
@@ -59,6 +66,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="clear"></div>
 	</div>
 	{include file="common/footer" /}
 </body>

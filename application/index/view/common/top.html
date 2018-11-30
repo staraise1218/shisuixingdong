@@ -28,6 +28,7 @@
         </div>
         <ul class="nav_list">
             <li class="active {$config['controllername'] == 'index' ? 'active_bg' : ''}"><a href="/">首页</a></li>
+            <li class="{$config['controllername'] == 'article' ? 'active_bg' : ''}"><a href="{:url('article/index')}">活动资讯</a></li>
             <li class="{$config['controllername'] == 'student' ? 'active_bg' : ''}"><a href="{:url('student/index')}">全部学生</a></li>
         </ul>
     </nav>

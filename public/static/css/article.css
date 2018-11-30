@@ -31,3 +31,10 @@
 .article_right{
 	padding-left: 50px !important;
 }
+
+.leftnav{ float: left; width: 180px; background: #FFF; border: 1px solid #e2e2e2; margin-top: 20px;}
+.leftnav ul { padding: 10px 10px 30px; }
+.leftnav ul li {border-bottom: 1px dashed #e2e2e2; font-size: 14px;text-align: center; }
+.leftnav li a {display: block; line-height: 50px;}
+.leftnav li.active a {color: #f21f2e;}
+.rightContainer {float: right; width: 745px;}
