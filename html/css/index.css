@@ -76,6 +76,7 @@ nav{
     display: inline-block;
 	position: absolute;
     bottom: 0;
+    font-family: "黑体";
 }
 
 .nav_list li{
