@@ -24,6 +24,10 @@ return array (
     array (
       0 => 'tinymce',
     ),
+    'testhook' => 
+    array (
+      0 => 'ueditor',
+    ),
   ),
   'route' => 
   array (

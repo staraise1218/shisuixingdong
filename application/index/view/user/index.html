@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>拾穗行动-我的捐赠</title>
+    <title>拾穗行动-我的捐助</title>
     <meta charset="UTF-8">
     <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
@@ -21,7 +21,7 @@
     <div class="pa white_bg">
         <ol class="breadcrumb white_bg">
             <li><a href="/">首页</a></li>
-            <li class="active active_bread">我的捐赠</li>
+            <li class="active active_bread">我的捐助</li>
         </ol>
     </div>
     <!-- 捐款 -->
@@ -35,9 +35,9 @@
                 <table class="table ac">
                     <thead>
                         <tr>
-                            <th>学生</th>
+                            <th>孩子</th>
                             <th>资助时间</th>
-                            <th>捐赠款</th>
+                            <th>捐助款</th>
                             <th>交易状态</th>
                             <th>操作</th>
                         </tr>
@@ -57,7 +57,7 @@
                             </td>
                             <td>
                                 {if condition="$item.paystatus==1"}
-                                <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id']))}">善款追踪与学生近况</a>
+                                <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id']))}">善款追踪与孩子近况</a>
                                 {/if}
                             </td>
                         </tr>
