@@ -105,7 +105,8 @@ nav{
 }
 
 .nav_list li{
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: bold;
 	float: left;
 	padding: 12px 27px;
 	position: relative;
