@@ -100,12 +100,12 @@ nav{
     display: inline-block;
 	position: absolute;
     bottom: 0;
-    font-family: "黑体";
+    font-family: "微软雅黑";
 
 }
 
 .nav_list li{
-	font-size: 20px;
+	font-size: 18px;
 	float: left;
 	padding: 12px 27px;
 	position: relative;
