@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-捐助收据申请</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/article.css">
+
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="/">首页</a></li>
+			<li class="active active_bread">捐助服务</li>
+		</ol>
+	</div>
+	
+	<!-- 全部文章 -->
+	<div class="pa">
+		<div class="leftnav">
+			<ul>
+				<li><a href="{:url('student/index')}">捐助孩子</a></li>
+                <li><a href="{:url('user/index')}">捐助查询</a></li>
+                <li  {if condition="$id eq 6"}class="active"{/if}><a href="{:url('index/student/page', array('id'=>6))}">捐助收据申请</a></li>
+			</ul>
+		</div>
+		<div class="article white_bg rightContainer">
+			<div class="article_table">
+				{$info.content}
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

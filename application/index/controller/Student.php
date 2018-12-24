@@ -198,4 +198,21 @@ class Student extends Frontend
 
         return $order_sn;
     }
+
+    
+
+    public function page(){
+        $id = input('id');
+
+        $info = Db::name('page')->where('id', $id)->find();
+
+        // 文章分类
+        $category = Db::name('category')->where('type', 'partner')->select();
+
+        $this->assign('id', $id);
+        $this->assign('info', $info);
+        $this->assign('category', $category);
+        $this->assign('category_id', 0);
+        return $this->fetch();
+    }
 }

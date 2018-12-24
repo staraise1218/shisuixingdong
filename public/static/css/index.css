@@ -117,7 +117,7 @@ nav{
 	text-decoration: none;
 }
 
-.nav_list li .subnav{position: absolute; background: #c81d1c; z-index: 10; top:49px; left: 0; padding: 10px 27px; display: none}
+.nav_list li .subnav{position: absolute; background: #c81d1c; z-index: 10; top:48px; left: 0; padding: 10px 27px; display: none}
 .nav_list li .subnav a {display: block; line-height: 38px; font-weight: normal;}
 /*.nav_list li .subnav a:hover{ background:  }*/
 

@@ -50,6 +50,7 @@ require.config({
         'selectpage': '../libs/fastadmin-selectpage/selectpage',
         'citypicker': '../libs/fastadmin-citypicker/dist/js/city-picker.min',
         'citypicker-data': '../libs/fastadmin-citypicker/dist/js/city-picker.data',
+        // 'ZeroClipboard': "../../plugins/ueditor/third-party/zeroclipboard"//主要是加这句话
     },
     // shim依赖配置
     shim: {
