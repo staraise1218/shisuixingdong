@@ -331,3 +331,11 @@ a:hover{
 .index_partner ul {margin-top: 30px; overflow:hidden; margin-left: -16px;}
 .index_partner ul li {float: left; margin-left: 16px;}
 .index_partner ul li img {width: 145px; height: 60px;}
+
+.index_zixun {overflow: hidden; width: 950px; margin: 50px auto 0;}
+.index_zixun .title {border-bottom: 1px solid #aaa;}
+.index_zixun .title span{display: inline-block; height: 30px; line-height: 30px; background: #c81d1c; color: #FFF; font-size: 18px; padding: 0 10px;}
+.index_zixun .left {width: 465px; margin-right: 20px; float: left;}
+.index_zixun .right {width: 465px; float: left}
+.index_zixun li {padding-top: 15px;}
+

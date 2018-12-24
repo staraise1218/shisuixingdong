@@ -52,6 +52,25 @@
             {/foreach}
         </ul>
     </div>
+    
+    <div class="index_zixun">
+        <div class="left">
+            <div class="title"><span>活动</span></div>
+            <ul>
+                {foreach name="activity" item="item"}
+                <li><a href="{:url('article/detail', array('id'=>$item.id))}">{$item.title}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+        <div class="right">
+            <div class="title"><span>执行动态</span></div>
+            <ul> 
+                {foreach name="zhixing" item="item"}
+                <li><a href="{:url('article/detail', array('id'=>$item.id))}">{$item.title}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
     <!-- 项目统计 -->
     <br/><br/>
     <div class="pa">
@@ -77,11 +96,6 @@
         <div class="title">合作伙伴</div>
         <ul>
             {foreach name="link" item="item"}
-            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
-            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
-            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
-            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
-            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
             <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
             {/foreach}
         </ul>

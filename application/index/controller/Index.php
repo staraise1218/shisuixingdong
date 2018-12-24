@@ -42,6 +42,11 @@ class Index extends Frontend
             ->where('paystatus', 1) // 资助中
             ->where('expirytime', 'lt', time())
             ->count();
+        // 活动
+        $activity = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(6)->select();
+        // 执行动态
+        $zhixing = Db::name('info')->where('category_id', 8)->field('id, title, createtime')->order('weigh desc')->limit(6)->select();
+
 
         // 合作伙伴
         $link = Db::name('link')
@@ -53,6 +58,8 @@ class Index extends Frontend
         $this->assign('articleList', $articleList);
         $this->assign('statistics', $statistics);
         $this->assign('link', $link);
+        $this->assign('activity', $activity);
+        $this->assign('zhixing', $zhixing);
         return $this->fetch();
     }
 
