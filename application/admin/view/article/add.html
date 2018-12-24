@@ -15,7 +15,7 @@
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <textarea id="c-content" class="form-control editor" rows="5" name="row[content]" cols="50"></textarea>
+            <textarea id="ueditor"  name="row[content]"></textarea>
         </div>
     </div>
     <div class="form-group">
@@ -44,3 +44,15 @@
         </div>
     </div>
 </form>
+<!-- 配置文件 -->
+<script type="text/javascript" src="/plugins/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/plugins/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('ueditor', {
+        initialFrameWidth: "100%",
+        initialFrameHeight: 500,
+        wordCount: false, //{Boolean} [默认值：true] //是否开启字数统计
+    });
+</script>
