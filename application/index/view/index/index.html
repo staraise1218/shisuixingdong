@@ -6,7 +6,7 @@
     <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css?v=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css?v=2">
     <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
@@ -71,7 +71,21 @@
                 <img class="pro_item_img" src="/static/images/icon.png"> 已结束项目 <span>{$statistics['finished']}</span> 个
             </div>
         </div>
+        <div class="clear"></div>
+    </div>
+    <div class="index_partner">
+        <div class="title">合作伙伴</div>
+        <ul>
+            {foreach name="link" item="item"}
+            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
+            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
+            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
+            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
+            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
+            <li><a href="{$item.url}"><img src="{$item.image}" alt=""></a></li>
+            {/foreach}
+        </ul>
     </div>
     {include file="common/footer" /}
-</body>
+</body>partner
 </html>

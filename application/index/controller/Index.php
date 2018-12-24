@@ -43,10 +43,16 @@ class Index extends Frontend
             ->where('expirytime', 'lt', time())
             ->count();
 
+        // 合作伙伴
+        $link = Db::name('link')
+            ->order('id desc')
+            ->select();
+
         $this->assign('adcount', count($adlist));
         $this->assign('adlist', $adlist);
         $this->assign('articleList', $articleList);
         $this->assign('statistics', $statistics);
+        $this->assign('link', $link);
         return $this->fetch();
     }
 

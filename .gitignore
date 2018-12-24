@@ -1,4 +1,5 @@
 public/uploadfile/
+public/uploads/
 runtime/
 application/database.php
 application/common/library/wxpay/WxPayConfig.php
