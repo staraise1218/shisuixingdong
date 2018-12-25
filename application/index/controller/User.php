@@ -369,4 +369,29 @@ class User extends Frontend
         return $this->fetch();
     }
 
+    // 我的活动
+    public function activity(){
+        $user_id = $this->auth->id;
+        $list = Db::name('activity_enroll')->alias('ae')
+            ->join('activity a', 'ae.activity_id=a.id')
+            ->where('user_id', $user_id)
+            ->order('ae.id desc')
+            ->field('ae.id, a.title, ae.fullname, a.time, a.activity_status')
+            ->paginate(10);
+
+        $this->assign('list', $list);
+        return $this->fetch();
+    }
+
+    public function cancleEnroll(){
+        $user_id = $this->auth->id;
+        $id = input('id');
+
+        if( false !== Db::name("activity_enroll")->where(array('id'=>$id, 'user_id'=>$user_id))->delete()){
+            die(json_encode(array('status'=>1)));
+        } else {
+            die(json_encode(array('status'=>0)));
+        }
+    }
+
 }

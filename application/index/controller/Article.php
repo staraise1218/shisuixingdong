@@ -28,18 +28,19 @@ class Article extends Frontend
         // 获取文章
         $list = Db::name('article')
             ->where($where)
-            ->field('id, title, createtime')
+            ->field('id, title, thumb, description, createtime')
             ->order('weigh desc')
             ->paginate(20);
 
         // 文字分类
         $category = Db::name('category')->where('type', 'article')->select();
-        
 
         $this->assign('list', $list);
         $this->assign('category', $category);
         $this->assign('category_id', $category_id);
-        return $this->fetch();
+
+         return $this->fetch();
+
     }
 
     public function detail(){

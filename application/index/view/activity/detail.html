@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-文章详情</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/details.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="/">首页</a></li>
+			<li><a href="{:url('article/index', array('category_id'=>1))}">活动资讯</a></li>
+			<li class="active active_bread">详情</li>
+		</ol>
+	</div>
+	<!-- 捐款 -->
+	<div class="pa">
+		<div class="white_bg details">
+			<p class="details_title ac">{$info.title}</p>
+			<p class="details_date ac">时间：{$info.createtime|date="Y-m-d H:i", ###}</p>
+			
+			<div class="article_content">
+				<div class="enroll"> <a href="{:url('index/activity/enroll', array('activity_id'=>$activity_id))}">报名</a></div>
+				{$info.content}
+			</div>
+		</div>
+		
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

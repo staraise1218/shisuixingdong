@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>拾穗行动-活动报名</title>
+	<meta charset="UTF-8">
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+	<link href="__CDN__/assets/css/frontend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet">
+	<script type="text/javascript">
+        var require = {
+            config: {$config|json_encode}
+        };
+    </script>
+	<script src="__CDN__/assets/js/require{$Think.config.app_debug?'':'.min'}.js" data-main="__CDN__/assets/js/require-frontend{$Think.config.app_debug?'':'.min'}.js?v={$site.version}"></script>
+
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+	<style type="text/css">
+		.contributor_input {width: 400px;}
+		.paybtn {}
+	</style>
+</head>
+<body>
+	{include file="common/top" /}
+	<!-- 面包屑导航 -->
+	<div class="pa white_bg">
+		<ol class="breadcrumb white_bg">
+			<li><a href="index.html">首页</a></li>
+			<li><a href="{:url('article/index', array('category_id'=>5))}">探访活动</a></li>
+			<li class="active active_bread">活动报名</li>
+		</ol>
+	</div>
+	<!-- 捐款 -->
+	<div class="pa" style="overflow: visible;">
+		<div class="remarks">
+			<div class="contributor white_bg">
+				<form name="enroll-form" id="enroll-form" action="{:url('index/activity/enroll')}" method="post" class="form-vertical">
+					{:token()}
+					<div class="contributor_item">
+						<p class="contributor_name">姓名 <span class="xing">*</span></p>
+						<input class="contributor_input" type="text" name="fullname" data-rule="姓名：required;length(~10)">
+					</div>
+					<div class="contributor_item">
+						<p class="contributor_name">手机 <span class="xing">*</span></p>
+						<input class="contributor_input" type="mobile" data-rule="require;mobile" name="mobile" value="{$userinfo.mobile}">
+					</div>
+					<div class="contributor_item">
+						<p class="contributor_name">邮箱 <span class="xing">*</span></p>
+						<input class="contributor_input" type="email" data-rule="require;email" name="email" value="{$userinfo.email}">
+					</div>
+					<div class="contributor_item">
+						<p class="contributor_name">性别 <span class="xing">*</span></p>
+						<div  class="contributor_sex">
+							<input type="radio" name="sex" value="男" {$userinfo.gender == '0' ? 'checked="checked"' : ''}> 男
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="sex" value="女" {$userinfo.gender == '1' ? 'checked="checked"' : ''}> 女
+						</div>
+					</div>
+					<div class="contributor_item">
+						<p class="contributor_name">身份证号</p>
+						<input class="contributor_input" type="text" name="ID_no" data-rule="身份证号：required">
+					</div>
+					<div class="contributor_item">
+						<p class="contributor_name">住宿房型 <span class="xing">*</span></p>
+						<div  class="contributor_sex">
+							<input type="radio" name="fang" value="大床房" checked="checked"> 大床房
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="fang" value="双人间"> 双人间
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="fang" value="三人间"> 三人间
+						</div>
+						
+					</div>
+					<div class="contributor_item">
+						<p class="contributor_name">人数 <span class="xing">*</span></p>
+						<div  class="contributor_sex">
+							<input type="radio" name="people_num" value="1" checked="checked"> 1
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="people_num" value="2"> 2
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="people_num" value="3"> 3
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="people_num" value="4"> 4
+						</div>
+						<div  class="contributor_sex">
+							<input type="radio" name="people_num" value="5"> 5
+						</div>
+						
+					</div>
+					<input type="hidden" name="activity_id" value="{$activity_id}">
+					<button class="activityBtn">提交</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	{include file="common/footer" /}
+</body>
+</html>

@@ -38,3 +38,10 @@
 .leftnav li a {display: block; line-height: 50px;}
 .leftnav li.active a {color: #f21f2e;}
 .rightContainer {float: right; width: 76%;}
+
+.activityList .item{margin-top: 10px; overflow: hidden;}
+.activityList .title {padding: 10px 0; font-weight: bold; font-size: 16px;}
+.activityList .thumb {width: 30%; float: left;}
+.activityList .thumb img {width: 100%;}
+.activityList .right {width: 65%; float: right;}
+.activityList .right .createtime { margin-top: 10px; text-align: right; }

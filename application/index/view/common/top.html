@@ -34,6 +34,7 @@
                     {foreach name=":getMenuCategory('article')" item="cate"}
                     <a href="{:url('article/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
                     {/foreach}
+                    <a href="{:url('index/activity/index')}">探访活动</a>
                 </div>
             </li>
             <li class="{$config['controllername'] == 'info' ? 'active_bg' : ''}"><a href="{:url('info/index', array('category_id'=>6))}">信息公示</a>

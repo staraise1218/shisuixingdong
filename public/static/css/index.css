@@ -339,3 +339,4 @@ a:hover{
 .index_zixun .right {width: 465px; float: left}
 .index_zixun li {padding-top: 15px;}
 
+.activityBtn {background: #c81d1c; border: none; display: block; margin: 50px auto; width: 100px; text-align: center; line-height: 40px; border-radius: 5px; color: #FFF; font-size: 16px;}

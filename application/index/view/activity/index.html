@@ -27,41 +27,26 @@
 		<div class="leftnav">
 			<ul>
 				{foreach name="category" item="item"}
-				<li  {if condition="$category_id eq $item.id"}class="active"{/if}><a href="{:url('index/article/index', array('category_id'=>$item.id))}">{$item.name}</a></li>
+				<li><a href="{:url('index/article/index', array('category_id'=>$item.id))}">{$item.name}</a></li>
 				{/foreach}
-				<li><a href="{:url('index/activity/index')}">探访活动</a></li>
+				<li class="active"><a href="{:url('index/activity/index')}">探访活动</a></li>
 			</ul>
 		</div>
 		<div class="article white_bg rightContainer">
-			<!-- <div class="article_top">
-				<div class="article_search fr">
-					<div class="nav_input">
-						<i class="iconfont icon-search"></i>
-						<input type="text" placeholder="输入搜索关键词">
-					</div>
-					<div class="nav_icon fr ac"><span class="iconfont icon-search" style="font-size: 24px;"></span></div>
-				</div>
-			</div> -->
 
 			<div class="article_table">
-				<table class="table">
-					<thead>
-						<tr>
-							<th style="width: 500px;" >标题</th>
-							<th>发表时间</th>
-						</tr>
-					</thead>
-					<tbody>
-						{foreach name="list" item="article"}
-						<tr>
-							<td class="article_right">
-								<a href="{:url('article/detail', array('id'=>$article.id))}">{$article.title}</a>
-							</td>
-							<td class="article_date ar">{$article.createtime|date="Y-m-d H:i", ###}</td>
-						</tr>
-						{/foreach}
-					</tbody>
-				</table>
+				<div class="activityList">
+					{foreach name="list" item="item"}
+					<div class="item">
+						<div class="title"><a href="{:url('index/activity/detail', array('id'=>$item.id))}">{$item.title}</a></div>
+						<div class="thumb"><a href="{:url('index/activity/detail', array('id'=>$item.id))}"><img src="{$item.image}" alt=""></a></div>
+						<div class="right">
+							<div class="description"><a href="{:url('index/activity/detail', array('id'=>$item.id))}">{$item.description}</a></div>
+							<div class="createtime">{:date('Y-m-d')}</div>
+						</div>
+					</div>
+					{/foreach}
+				</div>
 				<div class="pa ac">
 					{$list->render()}
 				</div>
