@@ -15,8 +15,8 @@ class Alipay {
 	private $signType = 'RSA2';
 	private $postCharset = 'utf-8';
 	private $format = 'json';
-	private $returnUrl = 'http://shisuixingdong.caapa.org/index/pay/resultPage_alipay';
-	private $notifyUrl = 'http://shisuixingdong.caapa.org/index/pay/alipayCallback';
+	private $returnUrl = 'http://shisuixingdong.caapa.org/index.php/index/pay/resultPage_alipay';
+	private $notifyUrl = 'http://shisuixingdong.caapa.org/index.php/index/pay/alipayCallback';
 
 
 	public function __construct(){
