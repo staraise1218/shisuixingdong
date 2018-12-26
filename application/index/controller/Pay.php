@@ -76,12 +76,12 @@ class Pay extends Frontend
     public function alipayCallback(){
         $Alipay = new Alipay();
         $checkResult = $Alipay->checkSign();
-// file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_APPEND);
+file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_APPEND);
 // file_put_contents(RUNTIME_PATH.'log/request.log',$checkResult, FILE_APPEND);
         // if( FALSE == $checkResult) return false;
         // 处理业务流程
-        // if($_POST['trade_status'] == 'TRADE_SUCCESS'){
-            $order_sn = '201812260901542077';//$_POST['out_trade_no'];
+        if($_POST['trade_status'] == 'TRADE_SUCCESS'){
+            $order_sn = $_POST['out_trade_no'];
             $updatedata = array(
                 'paystatus' => 1,
                 'paytime' => time(),
@@ -93,7 +93,7 @@ class Pay extends Frontend
             // 更新学生捐助状态
             $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
             Db::name('student')->where('id', $donation['student_id'])->update(array('donation_status', 2));
-        // }
+        }
 
         echo 'success';
     }

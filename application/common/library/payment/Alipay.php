@@ -55,7 +55,6 @@ class Alipay {
 		$aop = new \AopClient;
 		$aop->alipayrsaPublicKey = $this->alipayrsaPublicKey;
 		$signType = $this->signType;
-file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_APPEND);
 		return $aop->rsaCheckV1($_POST, null, $signType);
 	}
 }
