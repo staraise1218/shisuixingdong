@@ -30,7 +30,6 @@ class Wxpay {
 		$input->SetProduct_id("123456789");
 
 		$result = $this->GetPayUrl($input);
-		p($result);
 		return $result["code_url"];
 		
 	}
