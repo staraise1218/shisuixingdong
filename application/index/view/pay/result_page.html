@@ -90,6 +90,12 @@
 			<!-- 失败 -->
 			<!-- <div class="ac"><button class="pay_success_btn">重新支付</button></div> -->
 			{/if}
+			<div class="jump" style="text-align: center; font-size: 16px;">正在跳转...</div>
+			<script type="text/javascript">
+				setInterval(function(){
+					window.location="{:url('index/user/index')}";
+				}, 3000)
+			</script>
 		</div>
 	</div>
 	{include file="common/footer" /}

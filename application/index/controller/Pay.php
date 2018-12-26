@@ -89,6 +89,8 @@ class Pay extends Frontend
                 'expirytime' => strtotime('+1 year'),
             );
             Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
+            $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
+            Db::name('student')->where('id', $donation['student_id'])->update(array('donation_status', 2));
         }
 
         echo 'success';
