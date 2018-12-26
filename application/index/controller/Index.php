@@ -38,9 +38,8 @@ class Index extends Frontend
             ->count();
 
             // 已结束项目
-        $statistics['finished'] = Db::name('donation')
-            ->where('paystatus', 1) // 资助中
-            ->where('expirytime', 'lt', time())
+        $statistics['finished'] = Db::name('student')
+            ->where('donation_status', 3) // 资助完成
             ->count();
         // 活动
         $activity = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(6)->select();

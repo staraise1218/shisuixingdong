@@ -17,6 +17,7 @@ return [
     'Donation_status'  =>  '资助情况',
     'Donation_status 1'  =>  '待资助',
     'Donation_status 2'  =>  '资助中',
+    'Donation_status 3'  =>  '资助完成',
     'Status'  =>  '状态',
     'Status 1'  =>  '待发布',
     'Status 2'  =>  '已发布',
