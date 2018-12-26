@@ -88,7 +88,9 @@ class Pay extends Frontend
                 'payment_method' => '1',
                 'expirytime' => strtotime('+1 year'),
             );
+            // 更新订单表
             Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
+            // 更新学生捐助状态
             $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
             Db::name('student')->where('id', $donation['student_id'])->update(array('donation_status', 2));
         }

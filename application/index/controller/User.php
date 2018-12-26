@@ -61,7 +61,7 @@ class User extends Frontend
     {
         $user_id = $this->auth->id;
         $list = Db::name('donation')->alias('don')
-                ->join('student stu', 'don.user_id=stu.id', 'left')
+                ->join('student stu', 'don.student_id=stu.id', 'left')
                 ->where('user_id', $user_id)
                 ->field('stu.name, paystatus, paytime, expirytime, don.money, don.id donation_id, don.student_id, don.order_sn')
                 ->order('don.id desc')
