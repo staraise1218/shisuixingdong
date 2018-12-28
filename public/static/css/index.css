@@ -75,7 +75,7 @@ nav{
 	border: 1px solid #c81d1c;
 	display: inline-block;
 	position: absolute;
-	right: 15%;
+	right: 0;
 }
 
 .nav_input{
@@ -340,3 +340,12 @@ a:hover{
 .index_zixun li {padding-top: 15px;}
 
 .activityBtn {background: #c81d1c; border: none; display: block; margin: 50px auto; width: 100px; text-align: center; line-height: 40px; border-radius: 5px; color: #FFF; font-size: 16px;}
+
+.nav_container {background: #FFF}
+.topnav {width: 1000px; margin: 0 auto;}
+
+.index_q {background: #655845; padding: 10px 0; color: #cccccc;}
+.index_q ul {overflow: hidden; width: 950px; margin: 0 auto; }
+.index_q ul li {float: left; margin-right: 30px; height: 60px;}
+.index_q li i { font-size: 60px; float: left; margin-right: 15px; }
+.index_q li span { line-height: 60px; float: left; font-size: 20px;}

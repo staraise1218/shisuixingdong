@@ -32,7 +32,7 @@ class Student extends Model
 
     public function getDonationStatusList()
     {
-        return ['1' => __('Donation_status 1'),'2' => __('Donation_status 2')];
+        return ['1' => __('Donation_status 1'),'2' => __('Donation_status 2'),'3' => __('Donation_status 3')];
     }     
 
     public function getStatusList()

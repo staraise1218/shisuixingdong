@@ -11,12 +11,14 @@
     <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
     <link rel="stylesheet" type="text/css" href="/static/css/track.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
     {include file="common/top" /}
+    
     <!-- 轮播图 -->
-    <div id="myCarousel" class="carousel slide pa">
+    <div id="myCarousel" class="carousel slide">
         <!-- 轮播点 -->
         <ol class="carousel-indicators">
             {for start="0" end="$adcount"}
@@ -31,6 +33,14 @@
             </div>
             {/foreach}
         </div>
+    </div>
+    <div class="index_q">
+        <ul>
+            <li><i class="fa fa-question-circle-o"></i><span>我们做什么</span></li>
+            <li><i class="fa fa-question-circle-o"></i><span>工作如何进行</span></li>
+            <li><i class="fa fa-question-circle-o"></i><span>如何进行捐助</span></li>
+            <li><i class="fa fa-question-circle-o"></i><span>如何跟踪善款</span></li>
+        </ul>
     </div>
     <!-- 消息 -->
     <div class="pa">

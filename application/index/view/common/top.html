@@ -17,61 +17,64 @@
         </div>
     </div>
     <!-- 导航 -->
-    <nav class="pa white_bg">
-        <a href="/"><img class="nav_logo" src="/static/images/logo.png"></a>
-        <div class="nav_search">
-            <div class="nav_input">
-                <i class="iconfont icon-search"></i>
-                <input type="text" name="studentName" value="{$studentName ? $studentName : ''}" placeholder="请输入孩子姓名">
+    <div class="nav_container">
+        <nav class="white_bg topnav">
+            <a href="/"><img class="nav_logo" src="/static/images/logo.png"></a>
+            <div class="nav_search">
+                <div class="nav_input">
+                    <i class="iconfont icon-search"></i>
+                    <input type="text" name="studentName" value="{$studentName ? $studentName : ''}" placeholder="请输入孩子姓名">
+                </div>
+                <div class="nav_icon fr ac searchBtn"><span class="iconfont icon-search" style="font-size: 24px;"></span></div>
             </div>
-            <div class="nav_icon fr ac searchBtn"><span class="iconfont icon-search" style="font-size: 24px;"></span></div>
-        </div>
-        <ul class="nav_list">
-            <li class="active {$config['controllername'] == 'index' ? 'active_bg' : ''}"><a href="/">首页</a></li>
-            <li class="{$config['controllername'] == 'article' ? 'active_bg' : ''}">
-                <a href="{:url('article/index', array('category_id'=>1))}">活动资讯</a>
-                <div class="subnav">
-                    {foreach name=":getMenuCategory('article')" item="cate"}
-                    <a href="{:url('article/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
-                    {/foreach}
-                    <a href="{:url('index/activity/index')}">探访活动</a>
-                </div>
-            </li>
-            <li class="{$config['controllername'] == 'info' ? 'active_bg' : ''}"><a href="{:url('info/index', array('category_id'=>6))}">信息公示</a>
-                <div class="subnav">
-                    {foreach name=":getMenuCategory('info')" item="cate"}
-                    <a href="{:url('info/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
-                    {/foreach}
-                </div>
-            </li>
-            <li class="{$config['controllername'] == 'student' ? 'active_bg' : ''}">
-                <a href="{:url('student/index')}">捐助服务</a>
-                <div class="subnav" style="width: 160px; padding: 10px 20px;">
-                     <a href="{:url('student/index')}">捐助孩子</a>
-                    <a href="{:url('user/index')}">捐助查询</a>
-                    <a href="{:url('index/student/page', array('id'=>6))}">捐助收据申请</a>
-                </div>
-            </li>
-            <li class="{$config['controllername'] == 'partner' ? 'active_bg' : ''}"><a href="{:url('partner/index', array('category_id'=>10))}">我们的伙伴</a>
-                <div class="subnav" style="width: 180px;">
-                    
-                    {foreach name=":getMenuCategory('partner')" item="cate"}
-                    <a href="{:url('partner/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
-                    {/foreach}
-                    <a href="{:url('index/partner/page', array('id'=>1))}">企业合作伙伴</a>
-                    <a href="{:url('index/partner/page', array('id'=>2))}">拾穗执行团队</a>
-                    <a href="{:url('index/partner/page', array('id'=>3))}">明星公益伙伴</a>
-                </div>
-            </li>
-            <li class="{$config['controllername'] == 'about' ? 'active_bg' : ''}"><a href="{:url('index/about/page', array('id'=>4))}">关于我们</a>
-                <div class="subnav" style="width: 170px;">
-                    <a href="{:url('index/about/page', array('id'=>4))}">拾穗行动介绍</a>
-                    <a href="{:url('index/about/page', array('id'=>5))}">联系我们</a>
-                    <a href="{:url('index/about/page')}">意见反馈</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+            <ul class="nav_list">
+                <li class="active {$config['controllername'] == 'index' ? 'active_bg' : ''}"><a href="/">首页</a></li>
+                <li class="{$config['controllername'] == 'article' ? 'active_bg' : ''}">
+                    <a href="{:url('article/index', array('category_id'=>1))}">活动资讯</a>
+                    <div class="subnav">
+                        {foreach name=":getMenuCategory('article')" item="cate"}
+                        <a href="{:url('article/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
+                        {/foreach}
+                        <a href="{:url('index/activity/index')}">探访活动</a>
+                    </div>
+                </li>
+                <li class="{$config['controllername'] == 'info' ? 'active_bg' : ''}"><a href="{:url('info/index', array('category_id'=>6))}">信息公示</a>
+                    <div class="subnav">
+                        {foreach name=":getMenuCategory('info')" item="cate"}
+                        <a href="{:url('info/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
+                        {/foreach}
+                    </div>
+                </li>
+                <li class="{$config['controllername'] == 'student' ? 'active_bg' : ''}">
+                    <a href="{:url('student/index')}">捐助服务</a>
+                    <div class="subnav" style="width: 160px; padding: 10px 20px;">
+                         <a href="{:url('student/index')}">捐助孩子</a>
+                        <a href="{:url('user/index')}">捐助查询</a>
+                        <a href="{:url('index/student/page', array('id'=>6))}">捐助收据申请</a>
+                    </div>
+                </li>
+                <li class="{$config['controllername'] == 'partner' ? 'active_bg' : ''}"><a href="{:url('partner/index', array('category_id'=>10))}">我们的伙伴</a>
+                    <div class="subnav" style="width: 180px;">
+                        
+                        {foreach name=":getMenuCategory('partner')" item="cate"}
+                        <a href="{:url('partner/index', array('category_id'=>$cate.id))}">{$cate.name}</a>
+                        {/foreach}
+                        <a href="{:url('index/partner/page', array('id'=>1))}">企业合作伙伴</a>
+                        <a href="{:url('index/partner/page', array('id'=>2))}">拾穗执行团队</a>
+                        <a href="{:url('index/partner/page', array('id'=>3))}">明星公益伙伴</a>
+                    </div>
+                </li>
+                <li class="{$config['controllername'] == 'about' ? 'active_bg' : ''}"><a href="{:url('index/about/page', array('id'=>4))}">关于我们</a>
+                    <div class="subnav" style="width: 170px;">
+                        <a href="{:url('index/about/page', array('id'=>4))}">拾穗行动介绍</a>
+                        <a href="{:url('index/about/page', array('id'=>5))}">联系我们</a>
+                        <a href="{:url('index/about/page')}">意见反馈</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
 
     <script type="text/javascript">
         $('.searchBtn').click(function(){

@@ -33,7 +33,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'number', title: __('Number')},
                         {field: 'school.name', title: __('School_id')},
                         // {field: 'family_status', title: __('Family_status'), formatter: Table.api.formatter.status},
-                        // {field: 'city', title: __('City')},
+                        {field: 'city', title:'地区'},
                         {field: 'needmoney', title: __('Needmoney'), operate:'BETWEEN'},
                         {field: 'needyear', title: __('Needyear'), operate:'BETWEEN'},
                         {field: 'donation_status', title: __('Donation_status'), visible:false, searchList: {"1":__('Donation_status 1'),"2":__('Donation_status 2')}},
