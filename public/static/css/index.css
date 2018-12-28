@@ -4,11 +4,14 @@ body{
 }
 
 .pa{
-    padding: 0 15%;
+    /*padding: 0 15%;*/
     /*overflow: hidden;*/
     box-sizing: border-box;
-    min-width: 950px;
+    width: 1000px;
+    margin: 0 auto;
 }
+
+.contain {width: 1000px; margin: 0 auto;}
 
 /*登陆*/
 .login{
@@ -61,7 +64,6 @@ body{
 
 /*导航*/
 nav{
-	border-bottom: 2px solid #c81d1c;
 	position: relative;
 }
 
@@ -134,6 +136,7 @@ nav{
 .breadcrumb{
 	padding: 8px 0;
 	margin-bottom: 0;
+	background: #FFF;
 }
 
 .white_bg{
@@ -341,7 +344,7 @@ a:hover{
 
 .activityBtn {background: #c81d1c; border: none; display: block; margin: 50px auto; width: 100px; text-align: center; line-height: 40px; border-radius: 5px; color: #FFF; font-size: 16px;}
 
-.nav_container {background: #FFF}
+.nav_container {background: #FFF; border-bottom: 2px solid #c81d1c;}
 .topnav {width: 1000px; margin: 0 auto;}
 
 .index_q {background: #655845; padding: 10px 0; color: #cccccc;}
