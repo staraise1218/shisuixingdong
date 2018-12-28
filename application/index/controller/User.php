@@ -87,6 +87,20 @@ class User extends Frontend
         return $this->fetch();
     }
 
+    public function situation(){
+        $user_id = $this->auth->id;
+        $student_id = input('param.student_id');
+        /************* 判断是否捐助了该学生，如果没捐助，不能查看此信息*/
+        $count = Db::name('donation')->where(array('user_id'=>$user_id, 'student_id'=>$student_id, 'paystatus'=>'1'))->count();
+        if(!$count) $this->error('您无权查看该学生信息');
+
+        $list = Db::name('track')->where('student_id', $student_id)->select();
+
+        $this->assign('list', $list);
+
+        return $this->fetch();
+    }
+
     /**
      * 注册会员
      */
