@@ -43,7 +43,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         // {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'operate', title: __('Operate'), table: table, buttons: [
-                                {name: 'situation', text: '学生近况', title: '学生近况', icon: 'fa fa-list', classname: 'btn btn-xs btn-primary', url: 'Studentsituation/index'}
+                                {name: 'situation', text: '学生近况', title: '学生近况', icon: 'fa fa-list', classname: 'btn btn-xs btn-primary', url: 'Studentsituation/index'},
+                                {name: 'track', text: '善款追踪', title: '善款追踪', icon: 'fa fa-list', classname: 'btn btn-xs btn-primary', url: 'Track/index'},
                                 ], events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

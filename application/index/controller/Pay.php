@@ -94,6 +94,13 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
             // 更新学生捐助状态
             $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
             Db::name('student')->where('id', $donation['student_id'])->update(array('donation_status' => 2));
+            // 添加善款追踪记录
+            Db::name('track')->insert(array(
+                'student_id'=>$donation['student_id'],
+                'title' => '捐款提醒',
+                'content' => '捐款成功',
+                'createtime' => time(),
+            ));
         }
 
         echo 'success';
