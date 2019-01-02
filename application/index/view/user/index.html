@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="/static/css/mycont.css">
-
+    
 </head>
 <body>
     {include file="common/top" /}
@@ -57,8 +57,14 @@
                             </td>
                             <td>
                                 {if condition="$item.paystatus==1"}
-                                <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id']))}" style="margin-right: 20px;">善款追踪</a>
-                                <a class="table_btn" href="{:url('index/user/situation', array('student_id'=>$item['student_id']))}">孩子近况</a>
+                                <span class="donation_operate">
+                                   <i>●</i>
+                                   <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id']))}">善款追踪</a>
+                                </span>
+                                <span class="donation_operate">
+                                    <i>●</i>
+                                    <a class="table_btn" href="{:url('index/user/situation', array('student_id'=>$item['student_id']))}">孩子近况</a>
+                                </span>
                                 {/if}
                             </td>
                         </tr>

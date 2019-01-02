@@ -34,11 +34,10 @@
 				<div class="details_infoma">
 					<p>{$info.nation} / {$info.age}岁 / {$info.sexdata == '1' ? '男' : '女'}</p>
 					<p>编号： <span>{$info.number}</span></p>
-					<p>学校： <span>{$info.school_name}</span></p>
+					<p>地区： <span>{$info.city}</span></p>
 				</div>
 				<div class="details_infoma">
 					<p>家庭： <span>{$info.family_status}</span></p>
-					<p>地区： <span>{$info.city}</span></p>
 					<p>资助状态： <span>{$info.donation_status == '1' ? '待资助' : '资助中'}</span></p>
 				</div>
 				{if condition="$info.donation_status eq 2"}

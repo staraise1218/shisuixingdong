@@ -22,8 +22,8 @@ class Index extends Frontend
         // 获取banner
         $adlist = Db::name('ad')->where('ad_position_id', 1)->field('title, image, link')->select();
 
-        // 获取文章
-        $articleList = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(4)->select();
+        // 活动资讯
+        $articleList = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(5)->select();
 
         // 项目统计
         // 募捐中
@@ -41,8 +41,8 @@ class Index extends Frontend
         $statistics['finished'] = Db::name('student')
             ->where('donation_status', 3) // 资助完成
             ->count();
-        // 活动
-        $activity = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(6)->select();
+        // 探访活动
+        $activity = Db::name('activity')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(6)->select();
         // 执行动态
         $zhixing = Db::name('info')->where('category_id', 8)->field('id, title, createtime')->order('weigh desc')->limit(6)->select();
 

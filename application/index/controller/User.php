@@ -67,6 +67,9 @@ class User extends Frontend
                 ->order('don.id desc')
                 ->paginate();
 
+        // 查看是否有未读善款追踪和未读学生近况
+        // $is_track_read = 
+
         $this->assign('list', $list);
         return $this->view->fetch();
     }

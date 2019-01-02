@@ -352,3 +352,9 @@ a:hover{
 .index_q ul li {float: left; margin-right: 30px; height: 60px;}
 .index_q li i { font-size: 60px; float: left; margin-right: 15px; }
 .index_q li span { line-height: 60px; float: left; font-size: 20px;}
+
+ .donation_operate {position: relative; display: inline-block; height: 24px; line-height: 24px; margin-right: 10px;}
+.donation_operate i {position: absolute; left: -6px; top: -6px; color: red; display: inline-block; width: 4px; height: 4px; font-size: 1px;}
+span.mess { position: relative; }
+.mess i {position: absolute; left: 0; top:-12px; font-size: 2px; color: red; }
+

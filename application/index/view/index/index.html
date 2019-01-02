@@ -46,7 +46,7 @@
     <div class="pa">
         <div class="news">
             <div class="fl">
-                <span class="iconfont icon-huaban" style="font-size: 22px"></span> 全部文件
+                <span class="iconfont icon-huaban" style="font-size: 22px"></span> 活动资讯
             </div>
             <div class="news_r fr">
                 <a href="{:url('article/index')}">查看全部 <span class="iconfont icon-you-yuan" style="font-size: 22px"></span></a>
@@ -65,10 +65,10 @@
     
     <div class="index_zixun">
         <div class="left">
-            <div class="title"><span>活动</span></div>
+            <div class="title"><span>探访活动</span></div>
             <ul>
                 {foreach name="activity" item="item"}
-                <li><a href="{:url('article/detail', array('id'=>$item.id))}">{$item.title}</a></li>
+                <li><a href="{:url('activity/detail', array('id'=>$item.id))}">{$item.title}</a></li>
                 {/foreach}
             </ul>
         </div>
