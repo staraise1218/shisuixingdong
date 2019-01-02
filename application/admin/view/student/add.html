@@ -36,7 +36,7 @@
             <input id="c-number" class="form-control" name="row[number]" type="text" value="{$number}">
         </div>
     </div>
-    {if condition="$admin_id eq 1"}
+    {if condition="in_array($group_id, array(1,2))"}
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('School_id')}:</label>
         <div class="col-xs-12 col-sm-8">
@@ -77,6 +77,7 @@
             <input id="c-needyear" class="form-control" name="row[needyear]" type="number" value="1">
         </div>
     </div>
+    {if condition="$group_id neq 3"}
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Donation_status')}:</label>
         <div class="col-xs-12 col-sm-8">
@@ -101,6 +102,7 @@
 
         </div>
     </div>
+    {/if}
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Detailcontent')}:</label>
         <div class="col-xs-12 col-sm-8">

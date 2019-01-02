@@ -7,6 +7,7 @@ use app\admin\model\AuthGroupAccess;
 use app\common\controller\Backend;
 use fast\Random;
 use fast\Tree;
+use think\Db;
 
 /**
  * 管理员管理
@@ -59,7 +60,23 @@ class Admin extends Backend
             $groupdata = $result;
         }
 
+        // 获取所有管理员
+        $adminList = Db::name('admin')->alias('a')
+                ->join('auth_group_access aga', 'aga.uid=a.id')
+                ->where('aga.group_id', 'in', array(1,2))
+                ->field('id, pid, username, nickname')
+                ->select();
+
+        Tree::instance()->init($adminList);
+        $result = Tree::instance()->getTreeList(Tree::instance()->getTreeArray(0), 'nickname');
+        $admindata = array();
+        foreach ($result as $k => $v)
+        {
+            $admindata[$v['id']] = $v['nickname'];
+        }
+
         $this->view->assign('groupdata', $groupdata);
+        $this->view->assign('admindata', $admindata);
         $this->assignconfig("admin", ['id' => $this->auth->id]);
     }
 
@@ -217,6 +234,7 @@ class Admin extends Backend
         {
             $groupids[] = $v['id'];
         }
+
         $this->view->assign("row", $row);
         $this->view->assign("groupids", $groupids);
         return $this->view->fetch();

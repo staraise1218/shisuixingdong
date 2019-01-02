@@ -21,6 +21,8 @@ class Student extends Backend
     protected $relationSearch = true;
     // 快速搜索时执行查找的字段
     protected $searchFields = 'name';
+    protected $admin_id;
+    protected $group_id;
 
     public function _initialize()
     {
@@ -29,6 +31,12 @@ class Student extends Backend
         $this->view->assign("sexdataList", $this->model->getSexdataList());
         $this->view->assign("donationStatusList", $this->model->getDonationStatusList());
         $this->view->assign("statusList", $this->model->getStatusList());
+
+        $this->admin_id = $this->auth->id;
+        $group = Db::name('auth_group_access')->where('uid', $this->admin_id)->field('group_id')->find();
+        $this->group_id = $group['group_id'];
+        
+        $this->assign('group_id', $this->group_id);
     }
     
     /**
@@ -47,24 +55,40 @@ class Student extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
 
-            $admin_id = $this->auth->id;
-            if($admin_id == 1){
-                $school_where = array();
+            if($this->admin_id == 1){
+                // $school_where = array();
+                $groupwhere = array();
             } else {
-                $admin = Db::name('admin')->where('id', $admin_id)->field('school_id')->find();
-                $school_where = $admin['school_id'] ? array('school_id'=>$admin['school_id']) : array();
+                // $admin = Db::name('admin')->where('id', $this->admin_id)->field('school_id')->find();
+                // $school_where = $admin['school_id'] ? array('school_id'=>$admin['school_id']) : array();
+                
+                // 如果是区域管理员，查找区域管理员所有下属学生
+                if($this->group_id == 2){
+                    $subadmin = Db::name('admin')->where('pid', $this->admin_id)->field('id')->select();
+                    if($subadmin){
+                        $subadminIds = array_push($subadmin, $this->admin_id);
+                        $groupwhere['admin_id'] = array('in', $subadminIds);
+                    } else {
+                        $groupwhere['admin_id'] = $this->admin_id;
+                    }
+                } else { // 如果是老师，查找该老师下的学生
+                   $groupwhere['admin_id'] = $this->admin_id;
+                }
             }
+
             $total = $this->model
                 ->with('school')
                 ->where($where)
-                ->where($school_where)
+                // ->where($school_where)
+                ->where($groupwhere)
                 ->order($sort, $order)
                 ->count();
 
             $list = $this->model
                 ->with('school')
                 ->where($where)
-                ->where($school_where)
+                // ->where($school_where)
+                ->where($groupwhere)
                 ->order($sort, $order)
                 ->limit($offset, $limit)
                 ->select();
@@ -75,11 +99,9 @@ class Student extends Backend
             return json($result);
         }
 
-        $admin_id = $this->auth->id;
-        $this->assign('admin_id', $admin_id);
+        $this->assign('admin_id', $this->admin_id);
         return $this->view->fetch();
     }
-
 
     public function add()
     {
@@ -97,6 +119,8 @@ class Student extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : true) : $this->modelValidate;
                         $this->model->validate($validate);
                     }
+
+                    $params['admin_id'] = $this->auth->id;
                     $result = $this->model->allowField(true)->save($params);
                     if ($result !== false) {
                         $this->success();
@@ -113,18 +137,17 @@ class Student extends Backend
         // 学生编号
         $number = $this->generateNumber();
         // 获取老师（管理员）所负责的学校
-        $admin_id = $this->auth->id;
-        if($admin_id > 1){
+        if($this->admin_id > 1){
             $school  = Db::name('admin')->alias('admin')
                     ->join('school sch', 'admin.school_id=sch.id', 'left')
-                    ->where('admin.id', $admin_id)
+                    ->where('admin.id', $this->admin_id)
                     ->field('sch.id, sch.name')
                     ->find();
 
             $this->assign('school', $school);
         }
 
-        $this->assign('admin_id', $admin_id);
+        $this->assign('admin_id', $this->admin_id);
         $this->assign('number', $number);
         return $this->view->fetch();
     }
@@ -163,8 +186,8 @@ class Student extends Backend
             $this->error(__('Parameter %s can not be empty', ''));
         }
 
-        $admin_id = $this->auth->id;
-        if($admin_id > 1){
+
+        if($this->admin_id > 1){
             $school  = Db::name('school')
                     ->where('id', $row['school_id'])
                     ->field('id, name')
@@ -173,7 +196,7 @@ class Student extends Backend
             $this->assign('school', $school);
         }
 
-        $this->assign('admin_id', $admin_id);
+        $this->assign('admin_id', $this->admin_id);
         $this->view->assign("row", $row);
         return $this->view->fetch();
     }
