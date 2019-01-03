@@ -13,7 +13,7 @@ use think\Db;
 /**
  * 会员中心
  */
-class User extends Frontend
+class User extends Base
 {
 
     protected $layout = '';
@@ -65,10 +65,25 @@ class User extends Frontend
                 ->where('user_id', $user_id)
                 ->field('stu.name, paystatus, paytime, expirytime, don.money, don.id donation_id, don.student_id, don.order_sn')
                 ->order('don.id desc')
-                ->paginate();
+                ->select();
 
         // 查看是否有未读善款追踪和未读学生近况
-        // $is_track_read = 
+            foreach ($list as $k => $item) {
+                // 是否有未读 善款追踪
+                $is_track = Db::name('track')
+                    ->where('donation_id', $item['donation_id'])
+                    ->where('donor', $user_id)
+                    ->where('is_read', 0)
+                    ->count();
+                $list[$k]['notReadTrack'] = $is_track > 0 ? 1 : 0;
+                // 是否有未读 学生近况
+                $is_situation = Db::name('student_situation')
+                    ->where('donation_id', $item['donation_id'])
+                    ->where('donor', $user_id)
+                    ->where('is_read', 0)
+                    ->count();
+                $list[$k]['notReadSituation'] = $is_situation > 0 ? 1 : 0;
+            }
 
         $this->assign('list', $list);
         return $this->view->fetch();
@@ -77,12 +92,16 @@ class User extends Frontend
     public function track(){
         $user_id = $this->auth->id;
         $student_id = input('param.student_id');
+        $donation_id = input('param.donation_id');
         /************* 判断是否捐助了该学生，如果没捐助，不能查看此信息*/
         $count = Db::name('donation')->where(array('user_id'=>$user_id, 'student_id'=>$student_id, 'paystatus'=>'1'))->count();
         if(!$count) $this->error('您无权查看该学生信息');
 
 
-        $list = Db::name('student_situation')->where('student_id', $student_id)
+        $list = Db::name('student_situation')
+                ->where('student_id', $student_id)
+                ->where('donor', $user_id)
+                ->where('donation_id', $donation_id)
                 ->select();
 
         $this->assign('list', $list);
@@ -93,11 +112,17 @@ class User extends Frontend
     public function situation(){
         $user_id = $this->auth->id;
         $student_id = input('param.student_id');
+        $donation_id = input('param.donation_id');
         /************* 判断是否捐助了该学生，如果没捐助，不能查看此信息*/
         $count = Db::name('donation')->where(array('user_id'=>$user_id, 'student_id'=>$student_id, 'paystatus'=>'1'))->count();
         if(!$count) $this->error('您无权查看该学生信息');
 
-        $list = Db::name('track')->where('student_id', $student_id)->select();
+        $list = Db::name('track')
+                ->where('student_id', $student_id)
+                ->where('donor', $user_id)
+                ->where('donation_id', $donation_id)
+                ->where('student_id', $student_id)
+                ->select();
 
         $this->assign('list', $list);
 

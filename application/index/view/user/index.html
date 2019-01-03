@@ -58,12 +58,16 @@
                             <td>
                                 {if condition="$item.paystatus==1"}
                                 <span class="donation_operate">
+                                    {if condition="$item.notReadTrack eq 1"}
                                    <i>●</i>
-                                   <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id']))}">善款追踪</a>
+                                   {/if}
+                                   <a class="table_btn" href="{:url('index/user/track', array('student_id'=>$item['student_id'], 'donation_id'=>$item['donation_id']))}">善款追踪</a>
                                 </span>
                                 <span class="donation_operate">
-                                    <i>●</i>
-                                    <a class="table_btn" href="{:url('index/user/situation', array('student_id'=>$item['student_id']))}">孩子近况</a>
+                                    {if condition="$item.notReadSituation eq 1"}
+                                   <i>●</i>
+                                   {/if}
+                                    <a class="table_btn" href="{:url('index/user/situation', array('student_id'=>$item['student_id'], 'donation_id'=>$item['donation_id']))}">孩子近况</a>
                                 </span>
                                 {/if}
                             </td>
@@ -72,7 +76,6 @@
                     </tbody>
                 </table>
                 <div class="pa ac">
-                    {$list->render()}
                 </div>
             </div>
         </div>

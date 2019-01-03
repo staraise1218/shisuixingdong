@@ -86,6 +86,11 @@ class Track extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : true) : $this->modelValidate;
                         $this->model->validate($validate);
                     }
+
+                    $student = $studentModel = model('student')->find();
+                    $params['donor'] = $student['donor'];
+                    $params['donation_id'] = $student['donation_id'];
+                    
                     $result = $this->model->allowField(true)->save($params);
                     if ($result !== false) {
                         $this->success();

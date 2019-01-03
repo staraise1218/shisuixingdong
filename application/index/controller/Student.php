@@ -7,7 +7,7 @@ use think\Db;
 // use think\Paginator;
 use think\paginator\driver\Bootstrap;
 
-class Student extends Frontend
+class Student extends Base
 {
 
     protected $noNeedLogin = 'index,detail';

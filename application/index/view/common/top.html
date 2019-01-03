@@ -4,7 +4,7 @@
             <div class="fr">
                 {if condition="$isLogin == true"}
 
-                <span class="mess"><i>●</i><a href="{:url('user/index')}">我的捐助</a></span><span>|</span>
+                <span class="mess">{if condition="$is_message eq 1"}<i>●</i>{/if}<a href="{:url('user/index')}">我的捐助</a></span><span>|</span>
                 <a href="{:url('user/logout')}">注销</a><span>|</span>
                 {else /}
                 <a href="{:url('user/login')}">登陆</a><span>|</span>

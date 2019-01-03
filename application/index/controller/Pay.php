@@ -10,7 +10,7 @@ use think\Log;
 
 require_once ( EXTEND_PATH . 'phpqrcode/phpqrcode.php');
 
-class Pay extends Frontend
+class Pay extends Base
 {
 
     protected $noNeedLogin = '*';
@@ -91,9 +91,15 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
             );
             // 更新订单表
             Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
-            // 更新学生捐助状态
+            // 更新学生捐助状态,及捐助人，捐助订单id
             $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
-            Db::name('student')->where('id', $donation['student_id'])->update(array('donation_status' => 2));
+
+            $updateStudentData = array(
+                'donation_status' => 2,
+                'donor' => $donation['user_id'],
+                'donation_id' => $donation['id'],
+            );
+            Db::name('student')->where('id', $donation['student_id'])->update($updateStudentData);
             // 添加善款追踪记录
             Db::name('track')->insert(array(
                 'student_id'=>$donation['student_id'],

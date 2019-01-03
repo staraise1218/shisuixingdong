@@ -5,7 +5,7 @@ namespace app\index\controller;
 use app\common\controller\Frontend;
 use think\Db;
 
-class Activity extends Frontend
+class Activity extends Base
 {
 
     protected $noNeedLogin = 'detail';
