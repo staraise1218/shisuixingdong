@@ -98,6 +98,8 @@ class Notify extends \WxPayNotify
             'student_id'=>$donation['student_id'],
             'title' => '捐款提醒',
             'content' => '捐款成功',
+            'donor' => $donation['user_id'],
+            'donation_id' => $donation['id'],
             'createtime' => time(),
         ));
             
