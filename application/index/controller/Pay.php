@@ -47,7 +47,7 @@ class Pay extends Base
     	if($donation['paystatus'] == 1) $this->error('该订单已支付', url('user/index'));
     	if(!in_array($paymentMethod, array('alipay', 'weixin'))) $this->error('支付方式异常', url('user/index'));
 
-		$subject = '捐款';
+		$subject = '拾穗行动网站捐款';
 		$total_amount = 0.01;//$donation['money'];
     	if($paymentMethod == 'alipay'){
     		$Alipay = new Alipay();
