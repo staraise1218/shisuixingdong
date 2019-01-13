@@ -101,7 +101,7 @@
 			<a href="{:url('student/detail', array('id'=>$item.id))}">
 			<div class="student_item">
 				<div class="student_name">{$item.name}</div>
-				<p>{$item.nation} / {$item.age}岁 / {$item.sexdata == '1' ? '男' : '女'}</p>
+				<p>{$item.nation} / {:get_age($item.birthday)}岁 / {$item.sexdata == '1' ? '男' : '女'}</p>
 				<p>编号： <span>{$item.number}</span></p>
 				<p>所属地区： <span title="{$item.city}">{:mb_substr($item.city, 0, 7)}</span></p>
 				<div class="student_family">家庭： <span>{$item.family_status}</span></div>

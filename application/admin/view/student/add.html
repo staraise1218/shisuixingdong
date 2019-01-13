@@ -1,4 +1,10 @@
 <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-number" class="form-control" readonly="readonly" name="row[number]" type="text" value="{$number}">
+        </div>
+    </div>
 
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
@@ -13,9 +19,9 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Age')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">出生日期:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-age" class="form-control" name="row[age]" type="number">
+            <input id="c-birthday" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" name="row[birthday]" type="text">
         </div>
     </div>
     <div class="form-group">
@@ -28,12 +34,6 @@
             {/foreach}
             </div>
 
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Number')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-number" class="form-control" name="row[number]" type="text" value="{$number}">
         </div>
     </div>
     {if condition="in_array($group_id, array(1,2))"}
@@ -56,7 +56,8 @@
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Family_status')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-family_status" class="form-control" name="row[family_status]" type="text">
+            <!-- <input id="c-family_status" class="form-control" name="row[family_status]" type="text"> -->
+            <textarea name="row[family_status]" id="c-family_status" class="form-control" cols="30" rows="4" data-rule="required"></textarea>
         </div>
     </div>
     <div class="form-group">
@@ -65,13 +66,13 @@
             <div class='control-relative'><input id="c-city" class="form-control" data-toggle="city-picker" name="row[city]" type="text"></div>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group hide">
         <label class="control-label col-xs-12 col-sm-2">{:__('Needmoney')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-needmoney" class="form-control" step="0.01" name="row[needmoney]" type="number" value="2860.00">
+            <input id="c-needmoney" class="form-control" step="1" name="row[needmoney]" type="number" value="2860.00">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group hide">
         <label class="control-label col-xs-12 col-sm-2">{:__('Needyear')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-needyear" class="form-control" name="row[needyear]" type="number" value="1">

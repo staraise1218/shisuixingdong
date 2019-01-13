@@ -105,6 +105,12 @@ class User extends Base
                 ->select();
 
         $this->assign('list', $list);
+        // 已读
+        Db::name('track')
+                ->where('student_id', $student_id)
+                ->where('donor', $user_id)
+                ->where('donation_id', $donation_id)
+                ->update(array('is_read'=>1));
 
         return $this->fetch();
     }
@@ -117,14 +123,20 @@ class User extends Base
         $count = Db::name('donation')->where(array('user_id'=>$user_id, 'student_id'=>$student_id, 'paystatus'=>'1'))->count();
         if(!$count) $this->error('您无权查看该学生信息');
 
-        $list = Db::name('track')
+        $list = Db::name('student_situation')
                 ->where('student_id', $student_id)
                 ->where('donor', $user_id)
                 ->where('donation_id', $donation_id)
-                ->where('student_id', $student_id)
                 ->select();
 
         $this->assign('list', $list);
+
+        // 已读
+        Db::name('student_situation')
+                ->where('student_id', $student_id)
+                ->where('donor', $user_id)
+                ->where('donation_id', $donation_id)
+                ->update(array('is_read'=>1));
 
         return $this->fetch();
     }

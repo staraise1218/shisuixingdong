@@ -34,15 +34,17 @@ class Student extends Base
         if($donation_status) $where['donation_status'] = $donation_status;
         if($age){
             $ageArr = explode('-', $age);
-            $where['age'] = array('BETWEEN', "$ageArr[0], $ageArr[1]");
+            $y = date('Y');
+            $m = date('m');
+            $d = date('d');
+            $birthday_l = $y-$ageArr[0].'-'.$m.'-'.$d;
+            $birthday_r = $y-$ageArr[1].'-'.$m.'-'.$d;
+            $where['birthday'] = array('BETWEEN', "$birthday_r, $birthday_l");
             $filter['age_l'] = $ageArr[0];
             $filter['age_r'] = $ageArr[1];
         } else {
             $filter['age_l'] = '';
             $filter['age_r'] = '';
-        }
-        if($age_l && $age_r){
-            $where['age'] = array('BETWEEN', "$age_l, $age_r");
         }
         if($sexdata) $where['sexdata'] = $sexdata;
         if($studentName) $where['stu.name'] = array('like', "%$studentName%");
@@ -59,10 +61,9 @@ class Student extends Base
                 ->where($where)
                 ->order($order)
                 // ->limit($offset, $limit)
-                ->field('stu.id, stu.name, stu.city, stu.nation, stu.sexdata, stu.age, stu.number, stu.family_status, stu.donation_status')
+                ->field('stu.id, stu.name, stu.city, stu.nation, stu.sexdata, stu.birthday, stu.number, stu.family_status, stu.donation_status')
                 ->paginate(16, false, ['query'=>request()->param()]);
 
-        
 
         /**************** 输出模板变量 ****************/
         $filter['donation_status'] = input('get.donation_status');
