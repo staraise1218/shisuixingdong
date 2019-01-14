@@ -21,21 +21,25 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
                 sortName: 'id',
+                exportOptions: {
+                    ignoreColumn: [0, 'operate'], //默认不导出第一列(checkbox)与操作(operate)列
+                    default:['id','name']
+                },
                 columns: [
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'name', title: __('Name'), operate:'like'},
                         {field: 'nation', title: __('Nation')},
-                        {field: 'age', title: __('Age'), operate:'BETWEEN'},
+                        {field: 'birthday', title: '出生日期', operate:'BETWEEN'},
                         {field: 'sexdata', title: __('Sexdata'), visible:false, searchList: {"1":__('Sexdata 1'),"2":__('Sexdata 2')}},
                         {field: 'sexdata_text', title: __('Sexdata'), operate:false},
                         {field: 'number', title: __('Number')},
                         {field: 'school.name', title: __('School_id')},
-                        // {field: 'family_status', title: __('Family_status'), formatter: Table.api.formatter.status},
                         {field: 'city', title:'地区'},
-                        {field: 'needmoney', title: __('Needmoney'), operate:'BETWEEN'},
-                        {field: 'needyear', title: __('Needyear'), operate:'BETWEEN'},
+                        {field: 'family_status', operate:false, title: __('Family_status')},
+                        {field: 'needmoney', title: __('Needmoney'), operate:'BETWEEN', visible:false, operate:false},
+                        {field: 'needyear', title: __('Needyear'), operate:'BETWEEN', visible:false, operate:false},
                         {field: 'donation_status', title: __('Donation_status'), visible:false, searchList: {"1":__('Donation_status 1'),"2":__('Donation_status 2')}},
                         {field: 'donation_status_text', title: __('Donation_status'), operate:false},
                         {field: 'status', title: __('Status'), visible:false, searchList: {"1":__('Status 1'),"2":__('Status 2')}},

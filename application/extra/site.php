@@ -4,7 +4,7 @@ return array (
   'name' => '拾穗行动',
   'beian' => '京ICP备17005570号-1',
   'cdnurl' => '',
-  'version' => '1.0.5',
+  'version' => '1.0.6',
   'timezone' => 'Asia/Shanghai',
   'forbiddenip' => '',
   'languages' => 

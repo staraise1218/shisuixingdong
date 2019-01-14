@@ -21,3 +21,38 @@
 	//zhiManager.set('color','09aeb0'); //API示例，格式为 0-9 a-f 之间的六位有效字符 不用加#
 </script>
  -->
+
+<link rel="stylesheet" href="static/css/kefu.css">
+<!-- 代码部分begin -->
+<div id="rightArrow"><a href="javascript:;" title="在线客服"></a></div>
+<div id="floatDivBoxs">
+  <div class="floatDtt">在线客服</div>
+  <div class="floatShadow">
+    <ul class="floatDqq">
+      <li><a target="_blank" href="tencent://message/?uin=2744330553"><img src="static/images/qq.png" align="absmiddle">在线客服1号</a></li>
+      <li><a target="_blank" href="tencent://message/?uin=3073817437"><img src="static/images/qq.png" align="absmiddle">在线客服2号</a></li>
+    </ul>
+    <div class="floatImg"><img src="static/images/erweima.jpg" width="100%">微信公众账号</div>
+  </div>
+  <div class="floatDbg"></div>
+</div>
+<script src="static/js/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+  var flag=0;
+  $('#rightArrow').on("click",function(){
+    if(flag==1){
+      $("#floatDivBoxs").animate({right: '-175px'},300);
+      $(this).animate({right: '-5px'},300);
+      $(this).css('background-position','-50px 0');
+      flag=0;
+    }else{
+      $("#floatDivBoxs").animate({right: '0'},300);
+      $(this).animate({right: '170px'},300);
+      $(this).css('background-position','0px 0');
+      flag=1;
+    }
+  });
+});
+</script>
+<!-- 代码部分end -->
