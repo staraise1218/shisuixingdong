@@ -98,7 +98,7 @@ class User extends Base
         if(!$count) $this->error('您无权查看该学生信息');
 
 
-        $list = Db::name('student_situation')
+        $list = Db::name('track')
                 ->where('student_id', $student_id)
                 ->where('donor', $user_id)
                 ->where('donation_id', $donation_id)
