@@ -103,7 +103,7 @@ class User extends Base
                 ->where('donor', $user_id)
                 ->where('donation_id', $donation_id)
                 ->select();
-
+p(M('track')->getLastSql());
         $this->assign('list', $list);
         // 已读
         Db::name('track')
