@@ -88,7 +88,7 @@ class Studentsituation extends Backend
                         $this->model->validate($validate);
                     }
 
-                    $student = $studentModel = model('student')->find();
+                    $student = model('student')->where('id', $params['student_id'])->find();
                     $params['donor'] = $student['donor'];
                     $params['donation_id'] = $student['donation_id'];
 
