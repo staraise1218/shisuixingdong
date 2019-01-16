@@ -75,7 +75,7 @@ class Student extends Backend
                    $groupwhere['admin_id'] = $this->admin_id;
                 }
             }
-
+p($groupwhere);
             $total = $this->model
                 ->with('school')
                 ->where($where)
