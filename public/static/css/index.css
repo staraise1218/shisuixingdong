@@ -349,7 +349,7 @@ a:hover{
 
 .index_q {background: #655845; padding: 10px 0; color: #cccccc;}
 .index_q ul {overflow: hidden; width: 950px; margin: 0 auto; }
-.index_q ul li {float: left; margin-right: 30px; height: 60px; cursor: pointer;}
+.index_q ul li {float: left; margin-right: 75px; height: 60px; cursor: pointer;}
 .index_q li i { font-size: 60px; float: left; margin-right: 15px; }
 .index_q li span { line-height: 60px; float: left; font-size: 20px;}
 
