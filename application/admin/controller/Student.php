@@ -66,9 +66,9 @@ class Student extends Backend
                 if($this->group_id == 2){
                     $subadmin = Db::name('admin')->where('pid', $this->admin_id)->field('id')->select();
                     if($subadmin){
-                    p($subadmin, $this->admin_id);
-
-                        $subadminIds = array_push($subadmin, $this->admin_id);
+                        $subadminIds = array_column($subadmin, 'id');
+                        $subadminIds = array_push($subadminIds, $this->admin_id);
+                        p($subadminIds);
                         $groupwhere['admin_id'] = array('in', $subadminIds);
                     } else {
                         $groupwhere['admin_id'] = $this->admin_id;
