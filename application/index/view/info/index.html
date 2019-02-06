@@ -54,7 +54,7 @@
 						{foreach name="list" item="article"}
 						<tr>
 							<td class="article_right">
-								<a href="{:url('article/detail', array('id'=>$article.id))}">{$article.title}</a>
+								<a href="{:url('info/detail', array('id'=>$article.id))}">{$article.title}</a>
 							</td>
 							<td class="article_date ar">{$article.createtime|date="Y-m-d H:i", ###}</td>
 						</tr>
