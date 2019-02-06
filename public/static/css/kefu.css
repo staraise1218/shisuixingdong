@@ -1,10 +1,4 @@
 /* 代码整理：懒人之家 www.lanrenzhijia.com */
-*{padding:0;margin:0;}
-html,body{font-size:12px;font-family:"微软雅黑";outline:none;color:#666;background:#fff;}
-ul,ol{list-style:none;}
-img{border:none;outline:none;}
-a{color:#666;text-decoration:none;outline:none;}
-a:hover{color:#e8431f;}
 
 /*浮动客服*/
 #floatDivBoxs{width:170px;background:#fff;position:fixed;top:100px;right:-170px;z-index:999;}
