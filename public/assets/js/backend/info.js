@@ -25,7 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'category_id', title: __('Category_id')},
+                        {field: 'category.name', title: __('Category_id')},
                         {field: 'title', title: __('Title')},
                         {field: 'weigh', title: __('Weigh')},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},

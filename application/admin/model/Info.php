@@ -29,8 +29,12 @@ class Info extends Model
             $row->getQuery()->where($pk, $row[$pk])->update(['weigh' => $row[$pk]]);
         });
     }
-
     
+    public function category()
+    {
+        return $this->belongsTo('Category', 'category_id')->setEagerlyType(0);
+    }
+        
 
 
 

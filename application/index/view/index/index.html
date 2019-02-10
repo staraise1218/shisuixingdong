@@ -18,7 +18,7 @@
     {include file="common/top" /}
     
     <!-- 轮播图 -->
-    <div id="myCarousel" class="carousel slide">
+    <div id="myCarousel" class="carousel slide contain">
         <!-- 轮播点 -->
         <ol class="carousel-indicators">
             {for start="0" end="$adcount"}
@@ -34,7 +34,7 @@
             {/foreach}
         </div>
     </div>
-    <div class="index_q">
+    <div class="index_q contain">
         <ul>
             <li onclick="window.location='{:url('index/about/page', array('id'=>4))}'"><i class="fa fa-question-circle-o"></i><span>我们做什么</span></li>
             <li onclick="window.location='{:url('index/student/index')}'"><i class="fa fa-heart-o"></i><span>我要捐助</span></li>
