@@ -26,6 +26,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
+                        {field: 'order_sn', title: '捐助单号'},
                         {field: 'user.nickname', title: __('User_id')},
                         {field: 'student.name', title: __('Student_id')},
                         {field: 'year', title: __('Year')},
@@ -34,7 +35,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'paystatus', title: __('Paystatus'), visible:false, searchList: {"0":__('Paystatus 0'),"1":__('Paystatus 1')}},
                         {field: 'paystatus_text', title: __('Paystatus'), operate:false},
                         {field: 'expirytime', title: __('Expirytime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'createtime', title: __('Createtime'), visible:false, operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'fullname', title: __('Fullname')},
                         {field: 'sex', title: __('Sex'), visible:false, searchList: {"1":__('Sex 1'),"2":__('Sex 2')}},
                         {field: 'sex_text', title: __('Sex'), operate:false},
