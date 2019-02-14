@@ -2,10 +2,11 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
     var Controller = {
         index: function () {
+            var activity_id = $('input[name=activity_id]').val();
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'activityenroll/index',
+                    index_url: 'activityenroll/index?activity_id='+activity_id,
                     add_url: 'activityenroll/add',
                     edit_url: 'activityenroll/edit',
                     del_url: 'activityenroll/del',
