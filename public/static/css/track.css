@@ -51,6 +51,7 @@
 	width: calc(100% - 40px);
 	display: inline-block;
 }
+.track_pic img {max-width: 100%; height: auto;}
 
 .track_img{
 	width: 100%;
