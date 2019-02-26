@@ -347,7 +347,7 @@ a:hover{
 .nav_container {background: #FFF; border-bottom: 2px solid #c81d1c;}
 .topnav {width: 1000px; margin: 0 auto;}
 
-.index_q {background: #655845; padding: 10px 0; color: #cccccc;}
+.index_q {background: #655845; padding: 0px 0; color: #cccccc;}
 .index_q ul {overflow: hidden; width: 950px; margin: 0 auto; }
 .index_q ul li {float: left; margin-right: 75px; height: 60px; cursor: pointer;}
 .index_q li i { font-size: 60px; float: left; margin-right: 15px; }
