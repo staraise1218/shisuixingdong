@@ -104,7 +104,7 @@ class Student extends Base
         $is_donation = 0;
         $user_id = $this->auth->id;
         if($user_id){
-            $count = Db::name('donation')->where(array('id'=>$id, 'paystatus'=>'1'))->count();
+            $count = Db::name('donation')->where(array('id'=>$id, 'user_id'=>$user_id, 'paystatus'=>'1'))->count();
             $is_donation = $count ? 1 : 0;
         }
 
