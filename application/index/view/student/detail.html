@@ -51,9 +51,11 @@
 					<a class="details_btn ac" href="{:url('student/donation')}">捐 款</a>
 				</div>
 				{/if}
+				{if condition="$is_donation eq 1"}
 				<div class="details_content" style="padding-top: 30px;">
 					{$info.detailcontent}
 				</div>
+				{/if}
 			</div>
 		</div>
 	</div>
