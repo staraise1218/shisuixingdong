@@ -100,12 +100,16 @@ class Student extends Base
             $this->assign('donation', $donation);
         }
 
+        $name = $info['name'];
+        $info['name'] = hideName($name);
         // 判断登录用户是否捐助该学生
+
         $is_donation = 0;
         $user_id = $this->auth->id;
         if($user_id){
             $count = Db::name('donation')->where(array('student_id'=>$id, 'user_id'=>$user_id, 'paystatus'=>'1'))->count();
             $is_donation = $count ? 1 : 0;
+            if($count > 0 ) $info['name'] = $name;
         }
 
 

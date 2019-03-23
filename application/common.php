@@ -379,3 +379,12 @@ function get_age($birthday){
   $age -= 1; 
  return $age; 
 }
+
+function hideName($name){
+    if($name == '') return '';
+    $length = mb_strlen($name);
+    if($length == 2 || $length == 3) $name = mb_substr($name, 0, 1).'*'.mb_substr($name, 2);
+    if($length == 4) $name = mb_substr($name, 0, 1).'**'.mb_substr($name, 3);
+
+    return $name;
+}
