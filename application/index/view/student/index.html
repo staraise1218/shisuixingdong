@@ -17,7 +17,7 @@
 	<!-- <script type="text/javascript" src="/assets/libs/layer/dist/layer.js"></script> -->
 	<script type="text/javascript" src="/static/js/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/allstudent.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/allstudent.css?v=1">
 	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/contributor.css">
@@ -106,6 +106,7 @@
 				<div class="student_name">{:hideName($item.name)}</div>
 				<p>{$item.nation} / {:get_age($item.birthday)}岁 / {$item.sexdata == '1' ? '男' : '女'}</p>
 				<p>编号： <span>{$item.number}</span></p>
+				<p>年级： <span>{$item.grade}</span></p>
 				<p>所属地区： <span title="{$item.city}">{:mb_substr($item.city, 0, 7)}</span></p>
 				<div class="student_family">家庭： <span>{$item.family_status}</span></div>
 				{if condition="$item.donation_status eq 1"}

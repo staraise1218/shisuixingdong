@@ -61,7 +61,7 @@ class Student extends Base
                 ->where($where)
                 ->order($order)
                 // ->limit($offset, $limit)
-                ->field('stu.id, stu.name, stu.city, stu.nation, stu.sexdata, stu.birthday, stu.number, stu.family_status, stu.donation_status')
+                ->field('stu.id, stu.name, stu.city, stu.nation, stu.sexdata, stu.birthday, stu.number, stu.family_status, stu.donation_status, stu.grade')
                 ->paginate(16, false, ['query'=>request()->param()]);
 
 
@@ -87,7 +87,7 @@ class Student extends Base
         $info = Db::name('student')->alias('stu')
                 ->join('school sch', 'stu.school_id=sch.id', 'left')
                 ->where('stu.id', $id)
-                ->field('stu.id, stu.name, stu.nation, stu.sexdata, stu.city, stu.birthday, stu.number, stu.family_status, stu.donation_status, stu.detailcontent, stu.createtime, sch.name school_name')
+                ->field('stu.id, stu.name, stu.nation, stu.sexdata, stu.city, stu.birthday, stu.number, stu.family_status, stu.donation_status, stu.detailcontent, stu.createtime, sch.name school_name, stu.grade')
                 ->find();
         // 查找已结对的学生的结对对象
         if($info['donation_status'] == 2){
