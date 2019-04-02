@@ -45,7 +45,7 @@
                     <tbody>
                         {foreach name="list" item="item"}
                         <tr>
-                            <td>{$item.name}</td>
+                            <td> <a href="{:url('index/student/detail', array('id'=>$item.student_id))}">{$item.name}</a></td>
                             <td>{$item.paystatus ==1 ? date('Y-m-d', $item.paytime).'-'.date('Y-m-d', $item.expirytime) : ''}</td>
                             <td>￥{$item.money}</td>
                             <td>
