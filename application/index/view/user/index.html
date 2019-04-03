@@ -38,6 +38,7 @@
                             <th>孩子</th>
                             <th>资助时间</th>
                             <th>捐助款</th>
+                            <th>剩余款</th>
                             <th>交易状态</th>
                             <th>操作</th>
                         </tr>
@@ -48,6 +49,7 @@
                             <td> <a href="{:url('index/student/detail', array('id'=>$item.student_id))}">{$item.name}</a></td>
                             <td>{$item.paystatus ==1 ? date('Y-m-d', $item.paytime).'-'.date('Y-m-d', $item.expirytime) : ''}</td>
                             <td>￥{$item.money}</td>
+                            <td>￥{$item.surplus_money}</td>
                             <td>
                                 {if condition="$item.paystatus==0"}
                                 <a style="color: red" href="{:url('index/pay/paymentMethod', array('order_sn'=>$item.order_sn))}">未支付</a>

@@ -83,6 +83,11 @@ class User extends Base
                     ->where('is_read', 0)
                     ->count();
                 $list[$k]['notReadSituation'] = $is_situation > 0 ? 1 : 0;
+                // 计算剩余金额
+                $sum_money = Db::name('track')
+                    ->where('donation_id', $item['donation_id'])
+                    ->sum('money');
+                $list[$k]['surplus_money'] = $item['money'] - $sum_money;
             }
 
         $this->assign('list', $list);
