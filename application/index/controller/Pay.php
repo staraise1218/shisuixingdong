@@ -104,7 +104,8 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
             Db::name('track')->insert(array(
                 'student_id'=>$donation['student_id'],
                 'title' => '捐款提醒',
-                'content' => '捐款成功',
+                'content' => '捐款成功，扣除260作为项目执行经费',
+                'money' => 260,
                 'donor' => $donation['user_id'],
                 'donation_id' => $donation['id'],
                 'createtime' => time(),
