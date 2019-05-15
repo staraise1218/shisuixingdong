@@ -98,7 +98,7 @@ class Activity extends Base
                 ->where('activity_id', $activity_id)
                 ->count();
 
-            if($enrolled) $this->error('您已报名该活动');
+            // if($enrolled) $this->error('您已报名该活动');
 
             unset($data['token']);
             
@@ -107,7 +107,7 @@ class Activity extends Base
             $data['user_id'] = $user_id;
 
             if(Db::name('activity_enroll')->insert($data)){
-                $this->success('报名成功');
+                $this->success('报名成功', url('index/user/activity'));
             } else {
                 $this->error('报名失败');
             }
