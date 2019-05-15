@@ -49,7 +49,7 @@ class Index extends Base
 
         // 合作伙伴
         $link = Db::name('link')
-            ->order('weight asc, id desc')
+            ->order('weigh asc, id desc')
             ->select();
 
         $this->assign('adcount', count($adlist));
