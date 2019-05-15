@@ -23,7 +23,7 @@ class Index extends Base
         $adlist = Db::name('ad')->where('ad_position_id', 1)->field('title, image, link')->select();
 
         // 活动资讯
-        $articleList = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(5)->select();
+        $articleList = Db::name('article')->where('status', 1)->field('id, title, createtime')->order('weigh desc')->limit(8)->select();
 
         // 项目统计
         // 募捐中
