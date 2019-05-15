@@ -107,9 +107,9 @@ class Activity extends Base
             $data['user_id'] = $user_id;
 
             if(Db::name('activity_enroll')->insert($data)){
-                $this->success('提交成功');
+                $this->success('报名成功');
             } else {
-                $this->error('修改失败');
+                $this->error('报名失败');
             }
         }
 
