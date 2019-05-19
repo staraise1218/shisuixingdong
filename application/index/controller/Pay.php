@@ -7,6 +7,7 @@ use think\Db;
 use app\common\library\payment\Alipay;
 use app\common\library\payment\wxpay\Wxpay;
 use think\Log;
+use think\Image;
 
 require_once ( EXTEND_PATH . 'phpqrcode/phpqrcode.php');
 
@@ -110,6 +111,26 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
                 'donation_id' => $donation['id'],
                 'createtime' => time(),
             ));
+
+            // 生成证书
+            $filepath = 'certificate/'.str_pad($donation['user_id'], 6, '0', STR_PAD_LEFT).'/';
+            if( ! is_dir($filepath)){
+                mkdir($filepath, 0777, true);
+            }
+            $filename = $filepath.md5(time()).'.jpg';
+            $Image = Image::open('static/images/certificate_template.jpg');
+            // 给原图左上角添加水印并保存water_image.png
+            $Image->text($donation['fullname'], 'static/font/YaHei.ttf', 96, '#000000', Image::WATER_CENTER, array(0, -390))
+            ->text(date('Y'), 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(-160, 925))
+            ->text(date('m'), 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(-35, 925))
+            ->text(date('d'), 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(70, 925))
+                ->save($filename);
+            Db::name('certificate')->insert(array(
+                'user_id' => $donation['user_id'],
+                'image' => $filename,
+                'createtime' => time(),
+            ));
+
         }
 
         echo 'success';

@@ -5,6 +5,8 @@ namespace app\common\library\payment\wxpay;
 
 use think\Db;
 use think\Log;
+use think\Image;
+
 /**
 *
 * example目录下为简单的支付样例，仅能用于搭建快速体验微信支付使用
@@ -100,6 +102,25 @@ class Notify extends \WxPayNotify
             'content' => '捐款成功',
             'donor' => $donation['user_id'],
             'donation_id' => $donation['id'],
+            'createtime' => time(),
+        ));
+
+        // 生成证书
+        $filepath = 'certificate/'.str_pad($donation['user_id'], 6, '0', STR_PAD_LEFT).'/';
+        if( ! is_dir($filepath)){
+            mkdir($filepath, 0777, true);
+        }
+        $filename = $filepath.md5(time()).'.jpg';
+        $Image = Image::open('static/images/certificate_template.jpg');
+        // 给原图左上角添加水印并保存water_image.png
+        $Image->text($donation['fullname'], 'static/font/YaHei.ttf', 96, '#000000', Image::WATER_CENTER, array(0, -390))
+        ->text(date('Y'), 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(-160, 925))
+        ->text(date('m'), 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(-35, 925))
+        ->text(date('d'), 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(70, 925))
+            ->save($filename);
+        Db::name('certificate')->insert(array(
+            'user_id' => $donation['user_id'],
+            'image' => $filename,
             'createtime' => time(),
         ));
             
