@@ -24,13 +24,14 @@ class Test extends Base
         if( ! is_dir($filepath)){
             mkdir($filepath, 0777, true);
         }
+        $filename = $filepath.md5(time()).'.jpg';
         $Image = Image::open('static/images/certificate_template.jpg');
         // 给原图左上角添加水印并保存water_image.png
         $Image->text('王胜利', 'static/font/YaHei.ttf', 96, '#000000', Image::WATER_CENTER, array(0, -390))
         ->text('2019', 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(-160, 925))
         ->text('05', 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(-35, 925))
         ->text('20', 'static/font/YaHei.ttf', 24, '#000000', Image::WATER_CENTER, array(70, 925))
-            ->save($filepath.md5(time()).'.jpg');
+            ->save($filename);
     }
 
 }

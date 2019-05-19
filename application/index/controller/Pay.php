@@ -127,7 +127,7 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
                 ->save($filename);
             Db::name('certificate')->insert(array(
                 'user_id' => $donation['user_id'],
-                'image' => $filename,
+                'image' => '/'.$filename,
                 'createtime' => time(),
             ));
 

@@ -120,7 +120,7 @@ class Notify extends \WxPayNotify
             ->save($filename);
         Db::name('certificate')->insert(array(
             'user_id' => $donation['user_id'],
-            'image' => $filename,
+            'image' => '/'.$filename,
             'createtime' => time(),
         ));
             

@@ -418,7 +418,12 @@ class User extends Base
 
     // 合伙人证书
     public function certificate(){
+        $list = Db::name('certificate')
+            ->where('user_id', $this->auth->id)
+            ->order('id desc')
+            ->select();
 
+        $this->assign('list', $list);
         return $this->fetch();
     }
 
