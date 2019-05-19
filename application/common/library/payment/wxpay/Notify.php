@@ -79,7 +79,14 @@ class Notify extends \WxPayNotify
 		//TODO 3、处理业务逻辑
 		$order_sn = substr($data['out_trade_no'], 0, 18);
 
-		$updatedata = array(
+		$donation = Db::name('donation')->where('order_sn', $order_sn)->find();
+        // 检测订单状态
+        if($donation['paystatus'] == 1) {
+            echo 'success';
+            return false;
+        }
+        // 更新学生捐助状态,及捐助人，捐助订单id
+        $updatedata = array(
             'paystatus' => 1,
             'paytime' => time(),
             'payment_method' => '1',
@@ -87,8 +94,8 @@ class Notify extends \WxPayNotify
         );
         // 更新订单表
         Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
-        // 更新学生捐助状态
-        $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
+        
+
         $updateStudentData = array(
             'donation_status' => 2,
             'donor' => $donation['user_id'],

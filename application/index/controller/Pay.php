@@ -84,6 +84,14 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
         // 处理业务流程
         if($_POST['trade_status'] == 'TRADE_SUCCESS'){
             $order_sn =$_POST['out_trade_no'];
+            
+            $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
+            // 检测订单状态
+            if($donation['paystatus'] == 1) {
+                echo 'success';
+                return false;
+            }
+            // 更新学生捐助状态,及捐助人，捐助订单id
             $updatedata = array(
                 'paystatus' => 1,
                 'paytime' => time(),
@@ -92,8 +100,7 @@ file_put_contents('../runtime/log/request.log',var_export($_POST, true), FILE_AP
             );
             // 更新订单表
             Db::name('donation')->where('order_sn', $order_sn)->update($updatedata);
-            // 更新学生捐助状态,及捐助人，捐助订单id
-            $donation = Db::name('donation')->where('order_sn', $order_sn)->find();
+            
 
             $updateStudentData = array(
                 'donation_status' => 2,
