@@ -25,7 +25,7 @@ class Wxpay {
 		$input->SetTime_start(date("YmdHis"));
 		$input->SetTime_expire(date("YmdHis", time() + 600));
 		$input->SetGoods_tag("test");
-		$input->SetNotify_url("http://www.shisuixingdong.org/index/pay/wxpayCallback");
+		$input->SetNotify_url("https://www.shisuixingdong.org/index/pay/wxpayCallback");
 		$input->SetTrade_type("NATIVE");
 		$input->SetProduct_id("123456789");
 
