@@ -19,7 +19,6 @@ class Index extends Base
 
     public function index()
     {
-        echo phpinfo();die();
         // 获取banner
         $adlist = Db::name('ad')->where('ad_position_id', 1)->field('title, image, link')->select();
 
@@ -62,5 +61,8 @@ class Index extends Base
         $this->assign('zhixing', $zhixing);
         return $this->fetch();
     }
-
+    public function test(){
+        
+        echo phpinfo();die();
+    }
 }
