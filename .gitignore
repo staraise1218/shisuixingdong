@@ -4,3 +4,4 @@ runtime/
 application/database.php
 application/common/library/payment/wxpay/WxPayConfig.php
 application/common/library/payment/Alipay.php
+application/extra/site.php
